@@ -45,6 +45,15 @@ call plug#end()
 "Syntax highlighting.
 syntax on
 
+" Use the Solarized Dark theme
+set background=dark
+colorscheme solarized
+let g:solarized_termtrans=1
+
+" Enable line numbers
+set number
+" Highlight current line
+set cursorline
 "Softtab -- use spaces instead tabs.
 set expandtab
 set tabstop=4 shiftwidth=4 sts=4
@@ -111,10 +120,12 @@ augroup END
 setlocal spelllang=en_us
 
 "Keep 80 columns.
-set colorcolumn=80
-highlight OverLength ctermbg=red ctermfg=white guibg=#592929
-match OverLength /\%81v.\+/
-autocmd WinEnter * match OverLength /\%81v.\+/
+augroup collumnLimit
+  set colorcolumn=80
+  highlight OverLength ctermfg=white guibg=#592929
+  match OverLength /\%81v.\+/
+  autocmd WinEnter * match OverLength /\%81v.\+/
+augroup END
 
 "I dislike folding.
 set nofoldenable
