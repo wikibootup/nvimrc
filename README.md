@@ -1,6 +1,6 @@
 # nvimrc
 
 
-Source & References
+Sources & References
 ---
 https://github.com/dahlia/nvimrc
