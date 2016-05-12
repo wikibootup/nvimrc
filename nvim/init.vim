@@ -39,6 +39,9 @@ Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 Plug 'wakatime/vim-wakatime'
 
+Plug 'scrooloose/nerdtree'
+Plug 'ConradIrwin/vim-bracketed-paste'
+
 "End plugin list --------------------------------------------------------------
 call plug#end()
 
