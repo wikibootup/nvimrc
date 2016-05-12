@@ -173,3 +173,12 @@ nnoremap <F5> :MundoToggle
 
 "Use Vimfiler as default explorer like netrw
 let g:vimfiler_as_default_explorer = 1
+
+" NerdTree
+" To open a NERDTree automatically when vim starts up if no files were specified
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+" To close vim if only one window left
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" Shortcut [Ctrl]+n
+map <C-n> :NERDTreeToggle<CR>
