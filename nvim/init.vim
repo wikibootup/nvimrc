@@ -41,6 +41,8 @@ Plug 'wakatime/vim-wakatime'
 
 Plug 'scrooloose/nerdtree'
 Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'honza/vim-snippets'
+Plug 'Valloric/YouCompleteMe'
 
 "End plugin list --------------------------------------------------------------
 call plug#end()
