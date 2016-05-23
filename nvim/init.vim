@@ -30,7 +30,7 @@ Plug 'scrooloose/syntastic'
 Plug 'Shougo/unite.vim'
 Plug 'Shougo/vimfiler.vim'
 Plug 'simnalamburt/vim-mundo'
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim' " In virtuanenv, path not added, error
 Plug 'rhysd/committia.vim'
 function! DoRemote(arg)
   UpdateRemotePlugins
