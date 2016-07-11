@@ -44,6 +44,12 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
 
+" asynchronous execution library, needed for haskell ghc-mode
+Plug 'Shougo/vimproc.vim', {'do' : 'make'}
+
+" haskell autocomplete
+Plug 'eagletmt/neco-ghc'
+
 "End plugin list --------------------------------------------------------------
 call plug#end()
 
@@ -181,3 +187,12 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Shortcut [Ctrl]+n
 map <C-n> :NERDTreeToggle<CR>
+
+" For Haskell autocompletion
+" https://github.com/eagletmt/neco-ghc
+" Disable haskell-vim omnifunc
+" Manual autocomplete : Ctrl + space
+let g:haskellmode_completion_ghc = 1
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+let g:ycm_semantic_triggers = {'haskell' : ['.']}
+let g:necoghc_enable_detailed_browse = 1
