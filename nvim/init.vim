@@ -95,9 +95,6 @@ au! BufRead,BufNewFile *.scss setfiletype scss
 au! BufRead,BufNewFile *.haml setfiletype haml
 au! BufRead,BufNewFile *.less setfiletype less
 
-"Global tab/indent settings
-set ts=2 sw=2 sts=2
-
 "These languages have their own tab/indent settings.
 au FileType cpp    setl ts=2 sw=2 sts=2
 au FileType ruby   setl ts=2 sw=2 sts=2
