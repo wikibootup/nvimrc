@@ -62,7 +62,7 @@ colorscheme solarized
 let g:solarized_termtrans=1
 
 " Enable line numbers
-set number
+" set number
 " Highlight current line
 set cursorline
 "Softtab -- use spaces instead tabs.
