@@ -193,6 +193,9 @@ map <C-n> :NERDTreeToggle<CR>
 " Disable haskell-vim omnifunc
 " Manual autocomplete : Ctrl + space
 let g:haskellmode_completion_ghc = 1
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 let g:ycm_semantic_triggers = {'haskell' : ['.']}
 let g:necoghc_enable_detailed_browse = 1
+
+" Autocomplete using [Ctrl + Space]
+autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
+autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
