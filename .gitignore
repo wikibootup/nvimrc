@@ -6,3 +6,6 @@
 /nvim/vim
 
 *~
+
+# for ycm external completer
+__pycache__/
