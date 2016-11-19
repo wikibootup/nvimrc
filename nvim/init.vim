@@ -102,7 +102,7 @@ au! BufRead,BufNewFile *.haml setfiletype haml
 au! BufRead,BufNewFile *.less setfiletype less
 
 "These languages have their own tab/indent settings.
-au FileType cpp    setl ts=2 sw=2 sts=2
+au FileType cpp    setl ts=4 sw=4 sts=4
 au FileType ruby   setl ts=2 sw=2 sts=2
 au FileType yaml   setl ts=2 sw=2 sts=2
 au FileType html   setl ts=2 sw=2 sts=2
