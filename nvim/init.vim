@@ -202,3 +202,8 @@ let g:ycm_confirm_extra_conf = 0
 " Autocomplete using [Ctrl + Space]
 autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
 autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
+
+" i don't know where mouse=a is enabled, so disable it & enalble r for copy
+" paste
+set mouse-=a
+set mouse=r
