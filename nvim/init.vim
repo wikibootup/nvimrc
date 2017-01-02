@@ -50,6 +50,9 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " haskell autocomplete
 Plug 'eagletmt/neco-ghc'
 
+" jshint
+Plug 'wookiehangover/jshint.vim'
+
 "End plugin list --------------------------------------------------------------
 call plug#end()
 
