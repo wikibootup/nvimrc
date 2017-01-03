@@ -1,5 +1,8 @@
 # nvimrc
 
+### Pre-requisites
+
+[NeoVim](https://github.com/neovim/neovim/)
 
 Sources & References
 ---
