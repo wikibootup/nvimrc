@@ -191,21 +191,6 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Shortcut [Ctrl]+n
 map <C-n> :NERDTreeToggle<CR>
 
-" For Haskell autocompletion
-" https://github.com/eagletmt/neco-ghc
-" Disable haskell-vim omnifunc
-" Manual autocomplete : Ctrl + space
-let g:haskellmode_completion_ghc = 1
-let g:ycm_semantic_triggers = {'haskell' : ['.']}
-let g:necoghc_enable_detailed_browse = 1
-
-let g:ycm_global_ycm_extra_conf = '~/.config/nvim/.ycm_extra_conf.py'  
-let g:ycm_confirm_extra_conf = 0
-
-" Autocomplete using [Ctrl + Space]
-autocmd FileType haskell setlocal omnifunc=necoghc#omnifunc
-autocmd FileType html setlocal omnifunc=htmlcomplete#CompleteTags
-
 " i don't know where mouse=a is enabled, so disable it & enalble r for copy
 " paste
 set mouse-=a
