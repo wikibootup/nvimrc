@@ -50,19 +50,19 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " haskell autocomplete
 Plug 'eagletmt/neco-ghc'
 
-" jshint
-Plug 'wookiehangover/jshint.vim'
-
 "End plugin list --------------------------------------------------------------
 call plug#end()
 
 "Syntax highlighting.
 syntax on
 
+""" Error occured : Color configuration disabless the syntax on configuration.
+" use iterm preferences to set color
 " Use the Solarized Dark theme
-set background=dark
+" set background=dark
 "colorscheme solarized
-let g:solarized_termtrans=1
+"let g:solarized_termtrans=1
+"""
 
 " Enable line numbers
 " set number
