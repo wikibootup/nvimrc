@@ -71,7 +71,7 @@ set cursorline
 "Softtab -- use spaces instead tabs.
 set expandtab
 set tabstop=2 shiftwidth=2 sts=2
-set autoindent nosmartindent
+set noautoindent nosmartindent
 
 "set tab characters apart
 set listchars=tab:↹\
