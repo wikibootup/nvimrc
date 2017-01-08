@@ -70,7 +70,7 @@ syntax on
 set cursorline
 "Softtab -- use spaces instead tabs.
 set expandtab
-set tabstop=4 shiftwidth=4 sts=4
+set tabstop=2 shiftwidth=2 sts=2
 set autoindent nosmartindent
 
 "set tab characters apart
