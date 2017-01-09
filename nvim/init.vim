@@ -50,6 +50,8 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " haskell autocomplete
 Plug 'eagletmt/neco-ghc'
 
+Plug 'leafgarland/typescript-vim'
+
 "End plugin list --------------------------------------------------------------
 call plug#end()
 
