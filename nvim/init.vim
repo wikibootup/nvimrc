@@ -57,6 +57,10 @@ Plug 'moll/vim-node'
 Plug 'groenewege/vim-less'
 Plug 'othree/javascript-libraries-syntax.vim'
 
+" Templates
+" jade
+Plug 'digitaltoad/vim-pug'
+
 "End plugin list --------------------------------------------------------------
 call plug#end()
 
