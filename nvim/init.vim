@@ -50,7 +50,12 @@ Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 " haskell autocomplete
 Plug 'eagletmt/neco-ghc'
 
+" Javascript
 Plug 'leafgarland/typescript-vim'
+Plug 'pangloss/vim-javascript'
+Plug 'moll/vim-node'
+Plug 'groenewege/vim-less'
+Plug 'othree/javascript-libraries-syntax.vim'
 
 "End plugin list --------------------------------------------------------------
 call plug#end()
