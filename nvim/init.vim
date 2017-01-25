@@ -56,6 +56,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node'
 Plug 'groenewege/vim-less'
 Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'Shutnik/jshint2.vim'
 
 " Templates
 " jade
