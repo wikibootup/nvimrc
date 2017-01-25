@@ -206,3 +206,5 @@ map <C-n> :NERDTreeToggle<CR>
 " paste
 set mouse-=a
 set mouse=r
+" vim mouse mode on
+set mouse+=n
