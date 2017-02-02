@@ -58,6 +58,7 @@ Plug 'groenewege/vim-less'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'Shutnik/jshint2.vim'
 Plug 'tpope/vim-surround'
+Plug 'scrooloose/syntastic'
 
 " Templates
 " jade
@@ -207,6 +208,18 @@ map <C-n> :NERDTreeToggle<CR>
 " Vim surround
 " surround a word & insert surround text mode
 map <C-w> ysiw
+
+" Vim Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_javascript_checkers = ['jshint']
 
 " i don't know where mouse=a is enabled, so disable it & enalble r for copy
 " paste
