@@ -57,6 +57,7 @@ Plug 'moll/vim-node'
 Plug 'groenewege/vim-less'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'Shutnik/jshint2.vim'
+Plug 'tpope/vim-surround'
 
 " Templates
 " jade
@@ -202,6 +203,10 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Shortcut [Ctrl]+n
 map <C-n> :NERDTreeToggle<CR>
+
+" Vim surround
+" surround a word & insert surround text mode
+map <C-w> ysiw
 
 " i don't know where mouse=a is enabled, so disable it & enalble r for copy
 " paste
