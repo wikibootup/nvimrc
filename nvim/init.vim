@@ -19,12 +19,9 @@ Plug 'plasticboy/vim-markdown'
 Plug 'othree/html5.vim'
 Plug 'lepture/vim-jinja'
 Plug 'cakebaker/scss-syntax.vim'
-Plug 'cespare/vim-toml'
 Plug 'stephpy/vim-yaml'
-Plug 'cstrahan/vim-capnp'
-Plug 'dag/vim2hs'
-Plug 'pbrisbin/vim-syntax-shakespeare'
 
+Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/unite.vim'
@@ -43,10 +40,14 @@ Plug 'scrooloose/nerdtree'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
+Plug 'jiangmiao/auto-pairs'
 
 " asynchronous execution library, needed for haskell ghc-mode
 Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
+" Haskell
+Plug 'pbrisbin/vim-syntax-shakespeare'
+Plug 'dag/vim2hs'
 " haskell autocomplete
 Plug 'eagletmt/neco-ghc'
 
@@ -55,14 +56,13 @@ Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node'
 Plug 'groenewege/vim-less'
-Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'Shutnik/jshint2.vim'
-Plug 'tpope/vim-surround'
-Plug 'scrooloose/syntastic'
 
 " Templates
 " jade
 Plug 'digitaltoad/vim-pug'
+
+Plug 'Quramy/vim-js-pretty-template'
 
 "End plugin list --------------------------------------------------------------
 call plug#end()
@@ -222,8 +222,19 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_loc_list_height = 3
 
 let g:syntastic_javascript_checkers = ['jshint']
+let g:syntastic_typescript_checkers = ['tslint']
 
 nnoremap <C-S> : SyntasticToggleMode<CR>
+
+" Quramy/vim-js-pretty-template
+autocmd FileType javascript JsPreTmpl html
+
+" Typescript-vim
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+autocmd FileType typescript :set makeprg=tsc
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
 
 " i don't know where mouse=a is enabled, so disable it & enalble r for copy
 " paste
