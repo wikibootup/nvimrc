@@ -214,3 +214,9 @@ set mouse-=a
 set mouse=r
 " vim mouse mode on
 set mouse+=n
+
+" VIM default Key map
+" move to beginning of the current line
+map <C-a> 0
+"move to end of line
+map <C-e> $
