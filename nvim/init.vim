@@ -57,6 +57,7 @@ Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node'
 Plug 'groenewege/vim-less'
 Plug 'Shutnik/jshint2.vim'
+Plug 'ternjs/tern_for_vim'
 
 " Templates
 " jade
@@ -235,6 +236,12 @@ let g:typescript_compiler_options = ''
 autocmd FileType typescript :set makeprg=tsc
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+" Tern
+" Automatic hints after a delay
+let g:tern_show_argument_hints='on_hold'
+" Enable shortcuts 
+let g:tern_map_keys=1
 
 " i don't know where mouse=a is enabled, so disable it & enalble r for copy
 " paste
