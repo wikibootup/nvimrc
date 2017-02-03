@@ -4,6 +4,9 @@
 
 - [NeoVim](https://github.com/neovim/neovim/)
 
+- Symbolic link some configuration files for plugins
+  - .tern-project
+
 - Python (2.6+ or 3.3+) for YouCompleteMe
 	- $ brew install vim --with-python3 --without-python
 	- $ sudo pip3 install --upgrade neovim
