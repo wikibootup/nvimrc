@@ -65,6 +65,8 @@ Plug 'digitaltoad/vim-pug'
 
 Plug 'Quramy/vim-js-pretty-template'
 
+Plug 'craigemery/vim-autotag'
+
 "End plugin list --------------------------------------------------------------
 call plug#end()
 
@@ -242,6 +244,9 @@ autocmd QuickFixCmdPost    l* nested lwindow
 let g:tern_show_argument_hints='on_hold'
 " Enable shortcuts 
 let g:tern_map_keys=1
+
+" vim-autotag
+let g:autotagTagsFile=".tags"
 
 " i don't know where mouse=a is enabled, so disable it & enalble r for copy
 " paste

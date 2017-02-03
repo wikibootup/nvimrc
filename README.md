@@ -6,7 +6,7 @@
 
 - Symbolic link some configuration files for plugins
   - .tern-project
-
+  - .ctags originally from [here](https://github.com/grassdog/dotfiles/blob/6bd36bcb59b57eac28d618f76f21e83d4fc487a8/ctags)
 - Python (2.6+ or 3.3+) for YouCompleteMe
 	- $ brew install vim --with-python3 --without-python
 	- $ sudo pip3 install --upgrade neovim
