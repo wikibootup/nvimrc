@@ -45,9 +45,12 @@ Plug 'ternjs/tern_for_vim'
 " Templates
 " jade
 Plug 'digitaltoad/vim-pug'
-
 Plug 'Quramy/vim-js-pretty-template'
 
+" css
+Plug 'ap/vim-css-color'
+
+" auto ctags
 Plug 'craigemery/vim-autotag'
 
 "End plugin list --------------------------------------------------------------
@@ -237,3 +240,5 @@ set list
 
 " diable folding
 set nofoldenable
+
+
