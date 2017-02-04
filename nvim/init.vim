@@ -230,3 +230,7 @@ set clipboard=unnamedplus
 map <C-a> 0
 "move to end of line
 map <C-e> $
+
+" To show space(trail) as ~
+set listchars=trail:~
+set list
