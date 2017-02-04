@@ -234,3 +234,6 @@ map <C-e> $
 " To show space(trail) as ~
 set listchars=trail:~
 set list
+
+" diable folding
+set nofoldenable
