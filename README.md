@@ -21,6 +21,7 @@
     - Tern no module named ...
       - `npm install` at './nvim/plugged/tern_for_vim'
       - [Reference](https://vimeo.com/67215272)
+    - [YCM with Tern](https://github.com/Valloric/YouCompleteMe#javascript-semantic-completion) + `./install.py --tern-completer`
 Sources & References
 ---
 https://github.com/dahlia/nvimrc
