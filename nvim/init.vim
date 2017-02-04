@@ -7,12 +7,6 @@ call plug#begin('~/.config/nvim/plugged')
 "Plugin list ------------------------------------------------------------------
 
 Plug 'altercation/vim-colors-solarized'
-Plug 'vim-scripts/Mustang2'
-Plug 'Railscasts-Theme-GUIand256color'
-Plug 'vim-scripts/darktango.vim'
-Plug 'junegunn/seoul256.vim'
-Plug 'vim-scripts/xoria256.vim'
-Plug 'jdkanani/vim-material-theme'
 
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
@@ -24,15 +18,7 @@ Plug 'stephpy/vim-yaml'
 Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
 Plug 'scrooloose/syntastic'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/vimfiler.vim'
-Plug 'simnalamburt/vim-mundo'
 " Plug 'davidhalter/jedi-vim' " In virtuanenv, path not added, error
-Plug 'rhysd/committia.vim'
-function! DoRemote(arg)
-  UpdateRemotePlugins
-endfunction
-Plug 'Shougo/deoplete.nvim', { 'do': function('DoRemote') }
 
 Plug 'wakatime/vim-wakatime'
 
@@ -41,9 +27,6 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'honza/vim-snippets'
 Plug 'Valloric/YouCompleteMe'
 Plug 'jiangmiao/auto-pairs'
-
-" asynchronous execution library, needed for haskell ghc-mode
-Plug 'Shougo/vimproc.vim', {'do' : 'make'}
 
 " Haskell
 Plug 'pbrisbin/vim-syntax-shakespeare'
