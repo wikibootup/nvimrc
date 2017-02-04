@@ -241,4 +241,5 @@ set list
 " diable folding
 set nofoldenable
 
-
+" Hightlight for comment as gray
+hi Comment ctermfg=gray
