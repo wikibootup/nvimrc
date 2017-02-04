@@ -61,7 +61,7 @@ set background=dark
 colorscheme solarized
 
 " Enable line numbers
-" set number
+set number
 " Highlight current line
 set cursorline
 "Softtab -- use spaces instead tabs.
@@ -129,18 +129,6 @@ augroup END
 "English spelling checker.
 setlocal spelllang=en_us
 
-"Keep 80 columns.
-augroup collumnLimit
-  set colorcolumn=80
-  highlight OverLength ctermfg=white guibg=#592929
-  match OverLength /\%81v.\+/
-  autocmd WinEnter * match OverLength /\%81v.\+/
-augroup END
-
-"I dislike folding.
-set nofoldenable
-
-"I dislike visual bell as well.
 set novisualbell
 
 "gVim-specific configurations (including MacVim).
@@ -170,14 +158,6 @@ endif
 "vim-airline
 let g:airline_powerline_fonts = 1
 
-"Mundo -- Undo tree visualization
-set undofile
-set undodir=~/.config/nvim/undo
-nnoremap <F5> :MundoToggle
-
-"Use Vimfiler as default explorer like netrw
-let g:vimfiler_as_default_explorer = 1
-
 " NerdTree
 " To open a NERDTree automatically when vim starts up if no files were specified
 autocmd StdinReadPre * let s:std_in=1
@@ -186,10 +166,11 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 " Shortcut [Ctrl]+n
 map <C-n> :NERDTreeToggle<CR>
+let g:NERDTreeMouseMode = 2
 
 " Vim surround
 " surround a word & insert surround text mode
-map <C-w> ysiw
+map <C-y> ysiw
 
 " Vim Syntastic
 set statusline+=%#warningmsg#
@@ -198,10 +179,19 @@ set statusline+=%*
 
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 
+" Error list height
 let g:syntastic_loc_list_height = 3
+
+highlight clear SpellRare 
+highlight clear SpellBad 
+highlight clear SpellCap 
+highlight clear SpellLocal
+
+let g:syntastic_enable_highlighting=1
+let g:syntastic_enable_signs=1
 
 let g:syntastic_javascript_checkers = ['jshint']
 let g:syntastic_typescript_checkers = ['tslint']
@@ -227,12 +217,13 @@ let g:tern_map_keys=1
 " vim-autotag
 let g:autotagTagsFile=".tags"
 
-" i don't know where mouse=a is enabled, so disable it & enalble r for copy
-" paste
-set mouse-=a
-set mouse=r
-" vim mouse mode on
-set mouse+=n
+" mouse mode enabled automatically (somewhere), but I set it expliciltly. 
+set mouse+=a
+
+" Using the clipboard as the default register
+" in vim 7.3.74 and higher you can set
+" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+set clipboard=unnamedplus
 
 " VIM default Key map
 " move to beginning of the current line
