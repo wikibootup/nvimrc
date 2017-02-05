@@ -173,9 +173,6 @@ set list
 "diable folding
 set nofoldenable
 
-"Hightlight for comment as gray
-hi Comment ctermfg=gray
-
 "Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -277,3 +274,10 @@ nmap fzf :FZF <ENTER>
 autocmd FileType javascript nnoremap <silent> <buffer> td :TernDef<CR>
 
 "End Key bindings -------------------------------------------------------------
+
+"Highlighters-------------------------------------------------------------
+" It should be located at last.
+
+hi Comment ctermfg=Black
+
+"End Highlighters  -------------------------------------------------------------
