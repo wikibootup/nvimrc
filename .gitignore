@@ -9,3 +9,5 @@
 
 # for ycm external completer
 __pycache__/
+
+autoload/
