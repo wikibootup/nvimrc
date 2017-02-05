@@ -204,12 +204,6 @@ autocmd FileType typescript :set makeprg=tsc
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-"""Tern
-"""Automatic hints after a delay
-""let g:tern_show_argument_hints='on_hold'
-"""Enable shortcuts 
-""let g:tern_map_keys=1
-
 "Vim solarized (it should be located after syntax on)
 let g:solarized_termcolors=256
 set background=dark
@@ -235,6 +229,7 @@ augroup end
 if exists('g:plugs["tern_for_vim"]')
   let g:tern_show_argument_hints = 'on_hold'
   let g:tern_show_signature_in_pum = 1
+
   autocmd FileType javascript setlocal omnifunc=tern#Complete
 endif
 
@@ -278,7 +273,7 @@ nmap s ysiw
 "FZF
 nmap fzf :FZF <ENTER>
 
-"Tern for js
+"Tern for js, auto key map not working now
 autocmd FileType javascript nnoremap <silent> <buffer> td :TernDef<CR>
 
 "End Key bindings -------------------------------------------------------------
