@@ -23,6 +23,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ervandew/supertab'
+Plug 'neomake/neomake'
 
 "Languages
 Plug 'plasticboy/vim-markdown'
@@ -248,6 +249,14 @@ let g:deoplete#omni#functions.javascript = [
   \ 'tern#Complete',
   \ 'jspc#omni'
 \]
+
+"Neomake
+let g:neomake_javascript_jshint_maker = {
+    \ 'args': ['--verbose'],
+    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+    \ }
+let g:neomake_javascript_enabled_makers = ['jshint']
+autocmd! BufWritePost * Neomake
 
 "End Plugin configuration -----------------------------------------------------
 
