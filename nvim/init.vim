@@ -1,79 +1,61 @@
-"No compatibility to traditional vi
+" No compatible with the original VI(venerable old)
 set nocompatible
 
-"vim-plug
+"VIM-PLUG
 call plug#begin('~/.config/nvim/plugged')
-
+ 
 "Plugin list ------------------------------------------------------------------
 
+"Views
 Plug 'altercation/vim-colors-solarized'
-
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-Plug 'othree/html5.vim'
-Plug 'lepture/vim-jinja'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'stephpy/vim-yaml'
-
-Plug 'tpope/vim-surround'
 Plug 'bling/vim-airline'
-Plug 'scrooloose/syntastic'
-" Plug 'davidhalter/jedi-vim' " In virtuanenv, path not added, error
+Plug 'vim-airline/vim-airline-themes'
 
+"Utils
 Plug 'wakatime/vim-wakatime'
 
-Plug 'scrooloose/nerdtree'
-Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'honza/vim-snippets'
-Plug 'Valloric/YouCompleteMe'
+"Edit
+Plug 'godlygeek/tabular'
+Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'ervandew/supertab'
 
-" Haskell
-Plug 'pbrisbin/vim-syntax-shakespeare'
-Plug 'dag/vim2hs'
-" haskell autocomplete
-Plug 'eagletmt/neco-ghc'
-
-" Javascript
+"Languages
+Plug 'plasticboy/vim-markdown'
+Plug 'ap/vim-css-color'
 Plug 'leafgarland/typescript-vim'
 Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node'
 Plug 'groenewege/vim-less'
-Plug 'Shutnik/jshint2.vim'
-Plug 'ternjs/tern_for_vim'
+Plug 'plasticboy/vim-markdown'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 
-" Templates
-" jade
-Plug 'digitaltoad/vim-pug'
-Plug 'Quramy/vim-js-pretty-template'
-
-" css
-Plug 'ap/vim-css-color'
-
-" auto ctags
-Plug 'craigemery/vim-autotag'
+"Finders
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'do': './install --all' }
 
 "End plugin list --------------------------------------------------------------
 call plug#end()
 
-"Syntax highlighting.
-syntax on
+"VIM configuration ------------------------------------------------------------
 
-let g:solarized_termcolors=256
-set background=dark
-colorscheme solarized
+"Must be set first before configurations
+filetype plugin indent on
+syntax enable
 
-" Enable line numbers
+"Enable line numbers
 set number
-" Highlight current line
+"Highlight current line
 set cursorline
 "Softtab -- use spaces instead tabs.
 set expandtab
 set tabstop=2 shiftwidth=2 sts=2
-set noautoindent nosmartindent
-
-"set tab characters apart
-set listchars=tab:↹\
 
 "I dislike CRLF.
 if !exists("vimpager")
@@ -82,17 +64,46 @@ endif
 
 set backspace=2
 
-"Detect modeline hints.
-set modeline
+"Prefer UTF-8.
+set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
 
-"Disable bell
-set visualbell t_vb=
+"Some additional syntax highlighters.
+au! BufRead,BufNewFile *.wsgi setfiletype python
+au! BufRead,BufNewFile *.sass setfiletype sass
+au! BufRead,BufNewFile *.scss setfiletype scss
+au! BufRead,BufNewFile *.haml setfiletype haml
+au! BufRead,BufNewFile *.less setfiletype less
+
+"These languages have their own tab/indent settings.
+au FileType cpp    setl ts=4 sw=4 sts=4
+au FileType ruby   setl ts=2 sw=2 sts=2
+au FileType yaml   setl ts=2 sw=2 sts=2
+au FileType html   setl ts=2 sw=2 sts=2
+au FileType jinja  setl ts=2 sw=2 sts=2
+au FileType lua    setl ts=2 sw=2 sts=2
+au FileType haml   setl ts=2 sw=2 sts=2
+au FileType sass   setl ts=2 sw=2 sts=2
+au FileType scss   setl ts=2 sw=2 sts=2
+au FileType make   setl ts=4 sw=4 sts=4 noet
+au FileType gitcommit setl spell
+"Enable line numbers
+set number
+"Highlight current line
+set cursorline
+"Softtab -- use spaces instead tabs.
+set expandtab
+set tabstop=2 shiftwidth=2 sts=2
+
+"I dislike CRLF.
+if !exists("vimpager")
+  set fileformat=unix
+endif
+
+set backspace=2
 
 "Prefer UTF-8.
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
 
-"More tabs
-set tabpagemax=25
 
 filetype plugin on
 
@@ -115,19 +126,6 @@ au FileType sass   setl ts=2 sw=2 sts=2
 au FileType scss   setl ts=2 sw=2 sts=2
 au FileType make   setl ts=4 sw=4 sts=4 noet
 au FileType gitcommit setl spell
-
-"Syntastic-related configurations.
-let g:syntastic_always_populate_loc_list = 0
-let g:syntastic_auto_loc_list = 0
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-"Markdown-related configurations.
-augroup mkd
-  autocmd BufRead *.markdown set formatoptions=tcroqn2 comments=n:> spell
-  autocmd BufRead *.mkdn     set formatoptions=tcroqn2 comments=n:> spell
-  autocmd BufRead *.mkd      set formatoptions=tcroqn2 comments=n:> spell
-augroup END
 
 "English spelling checker.
 setlocal spelllang=en_us
@@ -158,88 +156,119 @@ if has("gui_win32")
   set guifont=Consolas:h11:cANSI
 endif
 
-"vim-airline
+"mouse mode enabled automatically (somewhere), but I set it expliciltly.
+set mouse+=a
+
+"Using the clipboard as the default register
+"in vim 7.3.74 and higher you can set
+"http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+set clipboard=unnamedplus
+
+"To show space(trail) as ~
+set listchars=trail:~,tab:↹\
+set list
+
+"diable folding
+set nofoldenable
+
+"Hightlight for comment as gray
+hi Comment ctermfg=gray
+
+"Disable automatic comment insertion
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
+"End VIM configuration --------------------------------------------------------
+
+"Plugin configuration ---------------------------------------------------------
+
+"""YCM
+""let g:ycm_seed_identifiers_with_syntax = 1
+
+"Vim-airline
 let g:airline_powerline_fonts = 1
 
-" NerdTree
-" To open a NERDTree automatically when vim starts up if no files were specified
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
-" To close vim if only one window left
+"Vim-airline-themes
+let g:airline_theme='luna'
+
+"NerdTree
+"To close vim if only one window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-" Shortcut [Ctrl]+n
-map <C-n> :NERDTreeToggle<CR>
-let g:NERDTreeMouseMode = 2
+let NERDTreeMapActivateNode='<tab>'
 
-" Vim surround
-" surround a word & insert surround text mode
-map <C-y> ysiw
-
-" Vim Syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
-
-" Error list height
-let g:syntastic_loc_list_height = 3
-
-highlight clear SpellRare 
-highlight clear SpellBad 
-highlight clear SpellCap 
-highlight clear SpellLocal
-
-let g:syntastic_enable_highlighting=1
-let g:syntastic_enable_signs=1
-
-let g:syntastic_javascript_checkers = ['jshint']
-let g:syntastic_typescript_checkers = ['tslint']
-
-nnoremap <C-S> : SyntasticToggleMode<CR>
-
-" Quramy/vim-js-pretty-template
-autocmd FileType javascript JsPreTmpl html
-
-" Typescript-vim
+"Typescript-vim
 let g:typescript_compiler_binary = 'tsc'
 let g:typescript_compiler_options = ''
 autocmd FileType typescript :set makeprg=tsc
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-" Tern
-" Automatic hints after a delay
-let g:tern_show_argument_hints='on_hold'
-" Enable shortcuts 
-let g:tern_map_keys=1
+"""Tern
+"""Automatic hints after a delay
+""let g:tern_show_argument_hints='on_hold'
+"""Enable shortcuts 
+""let g:tern_map_keys=1
 
-" vim-autotag
-let g:autotagTagsFile=".tags"
+"Vim solarized (it should be located after syntax on)
+let g:solarized_termcolors=256
+set background=dark
+colorscheme solarized
 
-" mouse mode enabled automatically (somewhere), but I set it expliciltly. 
-set mouse+=a
+"deoplete.vim
+let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
-" Using the clipboard as the default register
-" in vim 7.3.74 and higher you can set
-" http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-set clipboard=unnamedplus
+"omnifuncs for deoplete
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
 
-" VIM default Key map
-" move to beginning of the current line
+" tern
+if exists('g:plugs["tern_for_vim"]')
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+  autocmd FileType javascript setlocal omnifunc=tern#Complete
+endif
+
+"deoplete-ternjs
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
+" Use tern_for_vim.
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
+
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+
+"End Plugin configuration -----------------------------------------------------
+
+"Key bindings -----------------------------------------------------------------
+
+"Move to beginning of the current line
 map <C-a> 0
-"move to end of line
+"Move to end of line
 map <C-e> $
 
-" To show space(trail) as ~
-set listchars=trail:~
-set list
+"Nerdtree
+nmap q :NERDTreeToggle<cr>
 
-" diable folding
-set nofoldenable
+"Vim surround
+"surround a word & insert surround text mode
+nmap w ysiw
 
-" Hightlight for comment as gray
-hi Comment ctermfg=gray
+"FZF
+nmap fzf :FZF <ENTER>
+
+"Tern for js
+autocmd FileType javascript nnoremap <silent> <buffer> td :TernDef<CR>
+
+"End Key bindings -------------------------------------------------------------
