@@ -86,6 +86,7 @@ au FileType haml   setl ts=2 sw=2 sts=2
 au FileType sass   setl ts=2 sw=2 sts=2
 au FileType scss   setl ts=2 sw=2 sts=2
 au FileType make   setl ts=4 sw=4 sts=4 noet
+au FileType markdown   setl ts=2 sw=2 sts=2
 au FileType gitcommit setl spell
 "Enable line numbers
 set number
@@ -272,7 +273,7 @@ nmap q :NERDTreeToggle<cr>
 
 "Vim surround
 "surround a word & insert surround text mode
-nmap w ysiw
+nmap s ysiw
 
 "FZF
 nmap fzf :FZF <ENTER>
