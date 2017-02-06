@@ -283,6 +283,8 @@ autocmd FileType javascript nnoremap <silent> <buffer> td :TernDef<CR>
 "Highlighters-------------------------------------------------------------
 " It should be located at last.
 
-hi Comment ctermfg=Black
+hi Comment ctermfg=DarkBlue
+hi Constant ctermfg=DarkRed
+hi Statement ctermfg=Magenta
 
 "End Highlighters  -------------------------------------------------------------
