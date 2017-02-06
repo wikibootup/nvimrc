@@ -24,6 +24,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ervandew/supertab'
 Plug 'neomake/neomake'
+Plug 'fntlnz/atags.vim'
 
 "Languages
 Plug 'plasticboy/vim-markdown'
@@ -250,6 +251,10 @@ let g:neomake_javascript_jshint_maker = {
     \ }
 let g:neomake_javascript_enabled_makers = ['jshint']
 autocmd! BufWritePost * Neomake
+
+"Atags.vim
+"Generate tags everytime a file is being written.
+autocmd BufWritePost * call atags#generate()
 
 "End Plugin configuration -----------------------------------------------------
 
