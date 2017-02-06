@@ -8,7 +8,6 @@
 - [Plug install](https://github.com/junegunn/vim-plug)
 - Vim Color scheme is set although terminal editor set the specific configurations, because
   - 1. the colors of the status lines like SpellBad, SpellCap
-  - 2. readibility, More darkened vim background color(XTERM 256) works me well.
 
 - Symbolic link some configuration files for plugins
   - .tern-project
