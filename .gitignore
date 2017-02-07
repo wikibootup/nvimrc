@@ -11,3 +11,7 @@
 __pycache__/
 
 autoload/
+
+# Ctags, Atags
+tags
+tags.tmp*
