@@ -275,7 +275,7 @@ let NERDTreeMapOpenSplit="<C-s>"
 nmap s ysiw
 
 "FZF
-nmap fzf :FZF <ENTER>
+nmap fz :FZF <ENTER>
 "fzf key map to be equal with NerdTree
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
