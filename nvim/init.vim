@@ -274,6 +274,11 @@ nmap s ysiw
 
 "FZF
 nmap fzf :FZF <ENTER>
+"fzf key map to be equal with NerdTree
+let g:fzf_action = {
+      \ 'i': 'split',
+      \ 's': 'vsplit'
+      \ }
 
 "Tern for js, auto key map not working now
 autocmd FileType javascript nnoremap <silent> <buffer> td :TernDef<CR>
