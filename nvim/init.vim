@@ -267,6 +267,8 @@ map <C-e> $
 
 "Nerdtree
 nmap q :NERDTreeToggle<cr>
+let NERDTreeMapOpenVSplit="<C-v>"
+let NERDTreeMapOpenSplit="<C-s>"
 
 "Vim surround
 "surround a word & insert surround text mode
@@ -276,8 +278,8 @@ nmap s ysiw
 nmap fzf :FZF <ENTER>
 "fzf key map to be equal with NerdTree
 let g:fzf_action = {
-      \ 'ctrl-i': 'split',
-      \ 'ctrl-s': 'vsplit'
+      \ 'ctrl-s': 'split',
+      \ 'ctrl-v': 'vsplit'
       \ }
 
 "Tern for js, auto key map not working now
