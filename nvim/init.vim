@@ -265,6 +265,9 @@ map <C-a> 0
 "Move to end of line
 map <C-e> $
 
+"Map Quit without save
+map <C-q> :q<Enter>
+
 "Nerdtree
 nmap q :NERDTreeToggle<cr>
 let NERDTreeMapOpenVSplit="<C-v>"
