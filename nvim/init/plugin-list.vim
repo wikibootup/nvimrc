@@ -1,9 +1,3 @@
-" No compatible with the original VI(venerable old)
-set nocompatible
-
-"VIM-PLUG
-call plug#begin('~/.config/nvim/plugged')
- 
 "Plugin list ------------------------------------------------------------------
 
 "Views
@@ -44,10 +38,3 @@ Plug 'junegunn/fzf', { 'do': './install --all' }
 
 "End plugin list --------------------------------------------------------------
 call plug#end()
-
-"To set source order, each files to be sourced is specified rather than using
-"init/*.vim
-runtime! init/plugin-config.vim
-runtime! init/vim-config.vim
-runtime! init/key-binding.vim
-runtime! init/highlight.vim
