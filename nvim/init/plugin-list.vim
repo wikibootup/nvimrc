@@ -37,4 +37,3 @@ Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 
 "End plugin list --------------------------------------------------------------
-call plug#end()
