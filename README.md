@@ -24,6 +24,9 @@
   - deoplete, not found completion?
     - compiled NeoVim python module was required, python2,3 in system path was applied for now.
 
+- Colorscheme for matching terminal(iterm2) [Link](https://github.com/mbadolato/iTerm2-Color-Schemes)
+  - When monokai, Monokai soda is applied in my iterm2
+
 Sources & References
 ---
 https://github.com/dahlia/nvimrc

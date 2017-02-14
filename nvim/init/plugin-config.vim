@@ -24,7 +24,7 @@ autocmd QuickFixCmdPost    l* nested lwindow
 "let g:solarized_termcolors=256
 set background=dark
 "colorscheme solarized
-"Else if Monokai
+"Else if Monokai with Monokai soda terminal in iterm2
 colorscheme monokai
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
 
