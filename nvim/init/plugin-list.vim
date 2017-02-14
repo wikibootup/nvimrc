@@ -15,7 +15,6 @@ Plug 'tpope/vim-surround'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-Plug 'nathanaelkane/vim-indent-guides'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'ervandew/supertab'
 Plug 'neomake/neomake'
