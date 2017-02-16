@@ -31,6 +31,7 @@ Plug 'plasticboy/vim-markdown'
 Plug 'cakebaker/scss-syntax.vim'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'othree/html5.vim'
 
 "Finders
 Plug 'scrooloose/nerdtree'
