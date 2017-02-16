@@ -28,4 +28,11 @@ let g:fzf_action = {
 "Tern for js, auto key map not working now
 autocmd FileType javascript nnoremap <silent> <buffer> td :TernDef<CR>
 
+"Remove all trailing whitespace
+nmap Rtrailing :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+"Remove all tab space
+nmap Rtab :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+"Remove all tab space and trailing
+nmap rt RtrailingRtab
+
 "End Key bindings -------------------------------------------------------------
