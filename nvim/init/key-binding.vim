@@ -35,4 +35,7 @@ nmap Rtab :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "Remove all tab space and trailing
 nmap rt RtrailingRtab
 
+" No highlight in search result
+nmap nh :nohlsearch<ENTER>
+
 "End Key bindings -------------------------------------------------------------
