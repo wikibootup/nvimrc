@@ -33,6 +33,7 @@ au! BufRead,BufNewFile *.haml setfiletype haml
 au! BufRead,BufNewFile *.less setfiletype less
 
 "These languages have their own tab/indent settings.
+au FileType py    setl ts=4 sw=4 sts=4
 au FileType cpp    setl ts=4 sw=4 sts=4
 au FileType ruby   setl ts=2 sw=2 sts=2
 au FileType yaml   setl ts=2 sw=2 sts=2
@@ -44,43 +45,6 @@ au FileType sass   setl ts=2 sw=2 sts=2
 au FileType scss   setl ts=2 sw=2 sts=2
 au FileType make   setl ts=4 sw=4 sts=4 noet
 au FileType markdown   setl ts=2 sw=2 sts=2
-au FileType gitcommit setl spell
-"Enable line numbers
-set number
-"Highlight current line
-set cursorline
-"Softtab -- use spaces instead tabs.
-set expandtab
-set tabstop=2 shiftwidth=2 sts=2
-
-"I dislike CRLF.
-if !exists("vimpager")
-  set fileformat=unix
-endif
-
-set backspace=2
-
-"Prefer UTF-8.
-set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
-
-"Some additional syntax highlighters.
-au! BufRead,BufNewFile *.wsgi setfiletype python
-au! BufRead,BufNewFile *.sass setfiletype sass
-au! BufRead,BufNewFile *.scss setfiletype scss
-au! BufRead,BufNewFile *.haml setfiletype haml
-au! BufRead,BufNewFile *.less setfiletype less
-
-"These languages have their own tab/indent settings.
-au FileType cpp    setl ts=4 sw=4 sts=4
-au FileType ruby   setl ts=2 sw=2 sts=2
-au FileType yaml   setl ts=2 sw=2 sts=2
-au FileType html   setl ts=2 sw=2 sts=2
-au FileType jinja  setl ts=2 sw=2 sts=2
-au FileType lua    setl ts=2 sw=2 sts=2
-au FileType haml   setl ts=2 sw=2 sts=2
-au FileType sass   setl ts=2 sw=2 sts=2
-au FileType scss   setl ts=2 sw=2 sts=2
-au FileType make   setl ts=4 sw=4 sts=4 noet
 au FileType gitcommit setl spell
 
 "English spelling checker.
