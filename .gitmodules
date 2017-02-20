@@ -1,3 +1,0 @@
-[submodule "nvim/colors/vim-monokai"]
-	path = nvim/colors/vim-monokai
-	url = https://github.com/sickill/vim-monokai

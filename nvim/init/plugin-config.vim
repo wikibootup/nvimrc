@@ -63,4 +63,7 @@ let g:neomake_javascript_jshint_maker = {
 let g:neomake_javascript_enabled_makers = ['jshint']
 autocmd! BufWritePost * Neomake
 
+"Vim monokai
+set t_Co=256  " vim-monokai now only support 256 colours in terminal.
+
 "End Plugin configuration -----------------------------------------------------
