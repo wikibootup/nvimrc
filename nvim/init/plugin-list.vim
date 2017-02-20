@@ -2,7 +2,7 @@
 
 "Views
 "Plug 'altercation/vim-colors-solarized'
-"Plug 'crusoexia/vim-monokai'
+Plug 'crusoexia/vim-monokai'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -23,7 +23,6 @@ Plug 'fntlnz/atags.vim'
 Plug 'plasticboy/vim-markdown'
 Plug 'ap/vim-css-color'
 Plug 'leafgarland/typescript-vim'
-Plug 'pangloss/vim-javascript'
 Plug 'moll/vim-node'
 Plug 'groenewege/vim-less'
 Plug 'plasticboy/vim-markdown'
@@ -31,6 +30,13 @@ Plug 'cakebaker/scss-syntax.vim'
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/html5.vim'
+
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'vim-scripts/JavaScript-Indent'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
 
 "Finders
 Plug 'scrooloose/nerdtree'
