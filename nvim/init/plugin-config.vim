@@ -66,4 +66,10 @@ autocmd! BufWritePost * Neomake
 "Vim monokai
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
 
+"othree/javascript-libraries-syntax.vim
+let libs = 'jquery,underscore,backbone,angularjs,d3,requirejs,angularui'
+let g:used_javascript_libs = libs
+
+autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
+
 "End Plugin configuration -----------------------------------------------------
