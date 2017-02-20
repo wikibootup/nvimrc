@@ -34,7 +34,6 @@ Plug 'othree/html5.vim'
 
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
-Plug 'vim-scripts/JavaScript-Indent'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
