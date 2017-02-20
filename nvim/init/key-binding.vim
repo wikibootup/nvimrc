@@ -18,7 +18,7 @@ let NERDTreeMapOpenSplit="<C-s>"
 nmap s ysiw
 
 "FZF
-nmap fz :FZF <ENTER>
+nmap fz :FZF <cr>
 "fzf key map to be equal with NerdTree
 let g:fzf_action = {
       \ 'ctrl-s': 'split',
@@ -33,15 +33,17 @@ nmap Rtrailing :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "Remove all tab space
 nmap Rtab :%s/\t/  /g
 "Remove all tab space and trailing
-nmap rt RtrailingRtab<ENTER>
+nmap rt RtrailingRtab<cr>
 
 " No highlight in search result
-nmap nh :nohlsearch<ENTER>
+nmap nh :nohlsearch<cr>
 
 "Atags.vim
 "Generate tags everytime a file is being written.
 " generating tags when save makes system(vi speed) slow.
 "autocmd BufWritePost * call atags#generate()
 nmap gT :call atags#generate()<cr>
+
+map <c-g> :GundoToggle<CR>
 
 "End Key bindings -------------------------------------------------------------
