@@ -72,4 +72,17 @@ let g:used_javascript_libs = libs
 
 autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 
+"Vim-indent-guides
+"Configs should be here (rather than highlight.vim) for loading order issue.
+"for colorscheme issue, set default. But it will be overried in highlight.vim
+colorscheme default
+let g:indent_guides_enable_on_vim_startup = 1
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+let g:indent_guides_auto_colors = 0
+"rgb=48,48,48
+autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd ctermbg=236
+"rgb=58,58,58
+autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
+
 "End Plugin configuration -----------------------------------------------------
