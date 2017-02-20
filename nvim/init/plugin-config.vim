@@ -18,16 +18,6 @@ autocmd FileType typescript :set makeprg=tsc
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-"Vim colorscheme (it should be located after syntax on)
-
-"When Solarized
-"let g:solarized_termcolors=256
-set background=dark
-"colorscheme solarized
-"Else if Monokai with Monokai soda terminal in iterm2
-colorscheme monokai
-set t_Co=256  " vim-monokai now only support 256 colours in terminal.
-
 "deoplete.vim
 let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
 let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'

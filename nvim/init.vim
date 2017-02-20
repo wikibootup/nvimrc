@@ -8,7 +8,9 @@ runtime! init/plugin-list.vim
 call plug#end()
 
 "To set source order, each files to be sourced is specified rather than using
-"init/*.vim
+"**/*.vim
+runtime! colors/vim-monokai/colors/monokai.vim
+
 runtime! init/plugin-config.vim
 runtime! init/vim-config.vim
 runtime! init/key-binding.vim

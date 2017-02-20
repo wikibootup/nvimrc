@@ -1,8 +1,5 @@
 "Highlighters-------------------------------------------------------------
-" It should be located at last.
-" Now it is commented to apply default vim monokai colorscheme
-"hi Comment ctermfg=DarkBlue
-"hi Constant ctermfg=DarkRed
-"hi Statement ctermfg=Magenta
-
+"Vim colorscheme (it should be located after syntax on)
+set background=dark
+colorscheme monokai
 "End Highlighters  -------------------------------------------------------------
