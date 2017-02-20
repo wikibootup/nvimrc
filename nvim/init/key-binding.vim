@@ -37,5 +37,10 @@ nmap rt RtrailingRtab<ENTER>
 
 " No highlight in search result
 nmap nh :nohlsearch<ENTER>
+"Atags.vim
+"Generate tags everytime a file is being written.
+" generating tags when save makes system(vi speed) slow.
+"autocmd BufWritePost * call atags#generate()
+map <Leader>t :call atags#generate()<cr>
 
 "End Key bindings -------------------------------------------------------------
