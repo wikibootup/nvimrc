@@ -2,7 +2,7 @@
 
 "Views
 "Plug 'altercation/vim-colors-solarized'
-Plug 'crusoexia/vim-monokai'
+"Plug 'crusoexia/vim-monokai'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 
@@ -16,7 +16,6 @@ Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'ConradIrwin/vim-bracketed-paste'
-Plug 'ervandew/supertab'
 Plug 'neomake/neomake'
 Plug 'fntlnz/atags.vim'
 
