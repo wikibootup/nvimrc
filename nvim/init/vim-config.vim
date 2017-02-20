@@ -19,6 +19,9 @@ endif
 
 set backspace=2
 
+"case insensitve search
+set ignorecase
+
 "Prefer UTF-8.
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
 
