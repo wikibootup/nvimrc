@@ -41,6 +41,6 @@ nmap nh :nohlsearch<ENTER>
 "Generate tags everytime a file is being written.
 " generating tags when save makes system(vi speed) slow.
 "autocmd BufWritePost * call atags#generate()
-map <Leader>t :call atags#generate()<cr>
+nmap at :call atags#generate()<cr>
 
 "End Key bindings -------------------------------------------------------------
