@@ -10,6 +10,6 @@ call plug#end()
 "To set source order, each files to be sourced is specified rather than using
 "**/*.vim
 runtime! init/plugin-config.vim
+runtime! init/highlight.vim
 runtime! init/vim-config.vim
 runtime! init/key-binding.vim
-runtime! init/highlight.vim
