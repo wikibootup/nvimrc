@@ -62,6 +62,13 @@ let g:neomake_javascript_jshint_maker = {
     \ }
 let g:neomake_javascript_enabled_makers = ['jshint']
 autocmd! BufWritePost * Neomake
+"highlight first letter in error line
+augroup my_neomake_highlights
+    au!
+    autocmd ColorScheme *
+      \ hi NeomakeError ctermbg=Red |
+      \ hi NeomakeWarning ctermbg=DarkYellow
+augroup END
 
 "Vim monokai
 set t_Co=256  " vim-monokai now only support 256 colours in terminal.
