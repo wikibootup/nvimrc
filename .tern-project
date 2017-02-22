@@ -1,7 +1,10 @@
 {
   "plugins": {
     "es_modules": {},
-    "node": {}
+    "node": {},
+    "jshint": {
+      "configFile": "~/.jshintrc"
+    }
   },
   "libs": [
     "ecma5",
