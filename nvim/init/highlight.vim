@@ -1,7 +1,7 @@
 "Highlighters-------------------------------------------------------------
 "Vim colorscheme (it should be located after syntax on)
-set background=dark
-colorscheme monokai
+"set background=dark
+color dracula
 
 "Neomake
 "highlight first letter in error line
@@ -13,10 +13,10 @@ augroup my_neomake_highlights
 augroup END
 
 "Vim monokai
-augroup monokai_custom_highlights
-    au!
-    autocmd ColorScheme *
-      \ hi Visual ctermfg=white ctermbg=DarkGrey
-augroup END
+"augroup monokai_custom_highlights
+"    au!
+"    autocmd ColorScheme *
+"      \ hi Visual ctermfg=white ctermbg=DarkGrey
+"augroup END
 
 "End Highlighters  -------------------------------------------------------------
