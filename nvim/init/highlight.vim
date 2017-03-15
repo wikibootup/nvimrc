@@ -12,11 +12,4 @@ augroup my_neomake_highlights
       \ hi NeomakeWarning ctermbg=DarkYellow
 augroup END
 
-"Vim monokai
-"augroup monokai_custom_highlights
-"    au!
-"    autocmd ColorScheme *
-"      \ hi Visual ctermfg=white ctermbg=DarkGrey
-"augroup END
-
 "End Highlighters  -------------------------------------------------------------

@@ -1,8 +1,6 @@
 "Plugin list ------------------------------------------------------------------
 
 "Views
-"Plug 'altercation/vim-colors-solarized'
-Plug 'crusoexia/vim-monokai'
 Plug 'dracula/vim'
 Plug 'bling/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
