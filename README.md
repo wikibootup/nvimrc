@@ -29,7 +29,7 @@
     - compiled NeoVim python module was required, python2,3 in system path was applied for now.
 
 - Colorscheme for matching terminal(iterm2) [Link](https://github.com/mbadolato/iTerm2-Color-Schemes)
-  - Or, now I use 'dracula'. [iterm](https://draculatheme.com/iterm/), [editor](https://github.com/dracula/dracula-theme/)
+  - Or, now I use 'dracula'. it makes vim faster than others(03/15/2017). [iterm](https://draculatheme.com/iterm/), [editor](https://github.com/dracula/dracula-theme/)
 
 Sources & References
 ---
