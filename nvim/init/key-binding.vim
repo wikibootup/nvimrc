@@ -33,17 +33,20 @@ nmap Rtrailing :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "Remove all tab space
 nmap Rtab :%s/\t/  /g
 "Remove all tab space and trailing
-nmap rt RtrailingRtab<cr>
+nmap rt RtrailingRtab<CR>
 
 " No highlight in search result
-nmap nh :nohlsearch<cr>
+nmap nh :nohlsearch<CR>
 
 "Atags.vim
 "Generate tags everytime a file is being written.
 " generating tags when save makes system(vi speed) slow.
 "autocmd BufWritePost * call atags#generate()
-nmap gT :call atags#generate()<cr>
+nmap gT :call atags#generate()<CR>
 
 map <c-g> :GundoToggle<CR>
+
+"Folding
+nmap fd :setlocal foldlevel=
 
 "End Key bindings -------------------------------------------------------------

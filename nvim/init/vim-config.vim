@@ -88,8 +88,15 @@ set clipboard=unnamedplus
 set listchars=trail:~,tab:↹\
 set list
 
-"diable folding
-set nofoldenable
+"Folding
+"http://verens.com/2005/04/18/using-javascript-folds-in-vim/
+syn region myFold start="{" end="}" transparent fold
+syn sync fromstart
+set foldmethod=syntax
+set foldtext=getline(v:foldstart)
+syn sync maxlines=100
+
+hi Folded ctermfg=red
 
 "Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
