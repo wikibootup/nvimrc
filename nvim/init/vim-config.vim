@@ -106,4 +106,18 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "http://www.guckes.net/vim/setup.html
 set hid
 
+"Speed up Syntax Highlighting
+"http://stackoverflow.com/questions/4775605/vim-syntax-highlight-improve-performance
+"
+"http://vim.wikia.com/wiki/Speed_up_Syntax_Highlighting
+syn sync fromstart
+set nocursorcolumn
+set nocursorline
+set norelativenumber
+syn sync minlines=256 maxlines=256
+augroup highlight_speed_up
+  autocmd!
+  autocmd BufWinEnter,Syntax * syn sync minlines=256 maxlines=256
+augroup END
+
 "End VIM configuration --------------------------------------------------------
