@@ -94,4 +94,9 @@ set nofoldenable
 "Disable automatic comment insertion
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
+"Allows hiding buffers even though they contain modifications
+"Issue with neovim & vim-airline : https://github.com/neovim/neovim/issues/4524
+"http://www.guckes.net/vim/setup.html
+set hid
+
 "End VIM configuration --------------------------------------------------------
