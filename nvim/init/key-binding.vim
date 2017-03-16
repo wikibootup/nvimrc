@@ -47,6 +47,9 @@ nmap gT :call atags#generate()<CR>
 map <c-g> :GundoToggle<CR>
 
 "Folding
+"fold (ex: level=<input><CR>)
 nmap fd :setlocal foldlevel=
+"Toggle
+nmap <Tab> za
 
 "End Key bindings -------------------------------------------------------------
