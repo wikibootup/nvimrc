@@ -95,6 +95,8 @@ syn sync fromstart
 set foldmethod=syntax
 set foldtext=getline(v:foldstart)
 syn sync maxlines=100
+"default state: unfolded
+set foldlevel=99
 
 hi Folded ctermfg=red
 
