@@ -15,7 +15,6 @@
 
 - Symbolic link some configuration files for plugins
   - .tern-project
-  - .ctags originally from [here](https://github.com/grassdog/dotfiles/blob/6bd36bcb59b57eac28d618f76f21e83d4fc487a8/ctags)
 
 - Tern no module named ...
   - `npm install` at './nvim/plugged/tern_for_vim'
