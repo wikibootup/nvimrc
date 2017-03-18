@@ -6,8 +6,6 @@ syntax enable
 
 "Enable line numbers
 set number
-"Highlight current line
-set cursorline
 "Softtab -- use spaces instead tabs.
 set expandtab
 set tabstop=2 shiftwidth=2 sts=2
@@ -115,7 +113,9 @@ set hid
 syn sync fromstart
 set nocursorcolumn
 set nocursorline
+set lazyredraw
 set norelativenumber
+set synmaxcol=128
 syn sync minlines=256 maxlines=256
 augroup highlight_speed_up
   autocmd!

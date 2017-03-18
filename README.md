@@ -31,6 +31,17 @@
 - Colorscheme for matching terminal(iterm2) [Link](https://github.com/mbadolato/iTerm2-Color-Schemes)
   - Or, now I use 'dracula'. it makes vim faster than others(03/15/2017). [iterm](https://draculatheme.com/iterm/), [editor](https://github.com/dracula/dracula-theme/)
 
+- Search apps
+  - [fzf](https://github.com/junegunn/fzf)
+    - binded `:FZF` as `fz`
+    - it is intergrated with [zshrc](github.com/wikibootup/zshrc) configurations
+  - [Ack.vim](https://github.com/mileszs/ack.vim)
+    - `$ brew install ack` for mac. [link](https://github.com/mileszs/ack.vim/issues/156#issuecomment-218553117)
+    - Add `'mileszs/ack.vim'` into 'plugin list'
+    - integrated with ['ripGrep'](https://github.com/BurntSushi/ripgrep)
+      - `$ brew install ripgrep`
+      - [link](http://www.wezm.net/technical/2016/09/ripgrep-with-vim/)
+
 Sources & References
 ---
 https://github.com/dahlia/nvimrc

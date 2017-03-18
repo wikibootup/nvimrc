@@ -17,8 +17,7 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'neomake/neomake'
-Plug 'fntlnz/atags.vim'
-Plug 'sjl/gundo.vim'
+Plug 'mileszs/ack.vim'
 
 "Languages
 Plug 'plasticboy/vim-markdown'
@@ -41,5 +40,9 @@ Plug 'othree/es.next.syntax.vim'
 "Finders
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': './install --all' }
+
+"with Electron
+"Pre-Requisite : < NyaoVim > https://github.com/rhysd/NyaoVim
+Plug 'rhysd/nyaovim-markdown-preview'
 
 "End plugin list --------------------------------------------------------------

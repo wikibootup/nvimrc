@@ -33,7 +33,7 @@ nmap Rtrailing :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "Remove all tab space
 nmap Rtab :%s/\t/  /g
 "Remove all tab space and trailing
-nmap rt RtrailingRtab<CR>
+nmap RT RtrailingRtab<CR>
 
 " No highlight in search result
 nmap nh :nohlsearch<CR>
@@ -44,12 +44,27 @@ nmap nh :nohlsearch<CR>
 "autocmd BufWritePost * call atags#generate()
 nmap gT :call atags#generate()<CR>
 
-map <c-g> :GundoToggle<CR>
-
 "Folding
 "fold (ex: level=<input><CR>)
 nmap fd :setlocal foldlevel=
 "Toggle
 nmap <Tab> za
+
+"Ack.vim
+"type Ack, then it makes Ack!, because [I don't want to jump to the first result automatically.]
+"https://github.com/mileszs/ack.vim#i-dont-want-to-jump-to-the-first-result-automatically
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+map <S-f> :Ack 
+map <C-f> :LAckWindow 
+let g:ack_mappings = {
+  \ "<C-v>": "<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t",
+  \ "<C-s>": "<C-W><CR><C-W>K" }
+
+"http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
+nmap <S-Up> :wincmd k<CR>
+nmap <S-Down> :wincmd j<CR>
+nmap <S-Left> :wincmd h<CR>
+nmap <S-Right> :wincmd l<CR>
 
 "End Key bindings -------------------------------------------------------------
