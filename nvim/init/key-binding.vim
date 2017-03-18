@@ -5,8 +5,10 @@ map <C-a> 0
 "Move to end of line
 map <C-e> $
 
-"Map Quit without save
-map <C-q> :q<Enter>
+"Quit file
+nmap <C-q> :q<CR>
+"Save file like GUI editor
+nmap <C-s> :w<CR>
 
 "Nerdtree
 nmap q :NERDTreeToggle<cr>
