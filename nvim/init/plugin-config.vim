@@ -56,7 +56,10 @@ let g:deoplete#omni#functions.javascript = [
 \]
 
 "Neomake
-let g:neomake_open_list = 2
+"neomake makes work process slow bacase it causes a delay whenever the current buffer is saved
+"use ':lopen' instead.
+"https://github.com/neomake/neomake#file-makers
+let g:neomake_open_list = 0
 let g:neomake_list_height = 5
 let g:neomake_javascript_jshint_maker = {
     \ 'args': ['--verbose'],
