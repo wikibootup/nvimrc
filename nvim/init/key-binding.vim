@@ -58,7 +58,7 @@ nmap <Tab> za
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 map <S-f> :Ack 
-map <C-f> :LAckWindow! 
+map <C-f> :LAckWindow! -H 
 let g:ack_mappings = {
   \ "<C-v>": "<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t",
   \ "<C-s>": "<C-W><CR><C-W>K" }
