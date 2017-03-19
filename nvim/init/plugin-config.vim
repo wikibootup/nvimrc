@@ -90,7 +90,7 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=238
 "RipGrep integration
 "http://www.wezm.net/technical/2016/09/ripgrep-with-vim/
 if executable("rg")
-  let g:ackprg = 'rg --vimgrep --no-heading'
+  let g:ackprg = 'rg --vimgrep --no-heading -i'
 endif
 
 "MRU
