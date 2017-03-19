@@ -18,6 +18,7 @@ Plug 'zchee/deoplete-jedi'
 Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'neomake/neomake'
 Plug 'mileszs/ack.vim'
+Plug 'yegappan/mru'
 
 "Languages
 Plug 'plasticboy/vim-markdown'

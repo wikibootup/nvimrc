@@ -69,4 +69,7 @@ nmap <S-Down> :wincmd j<CR>
 nmap <S-Left> :wincmd h<CR>
 nmap <S-Right> :wincmd l<CR>
 
+"MRU
+nmap ru :MRU<CR>
+
 "End Key bindings -------------------------------------------------------------

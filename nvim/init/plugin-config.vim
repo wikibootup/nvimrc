@@ -90,4 +90,8 @@ if executable("rg")
   let g:ackprg = 'rg --vimgrep --no-heading'
 endif
 
+"MRU
+let MRU_Max_Entries = 10
+let MRU_Window_Height = 5
+
 "End Plugin configuration -----------------------------------------------------
