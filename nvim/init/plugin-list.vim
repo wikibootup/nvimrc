@@ -19,6 +19,7 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'neomake/neomake'
 Plug 'mileszs/ack.vim'
 Plug 'yegappan/mru'
+Plug 'vim-scripts/YankRing.vim'
 
 "Languages
 Plug 'plasticboy/vim-markdown'

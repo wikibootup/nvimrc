@@ -72,4 +72,7 @@ nmap <S-Right> :wincmd l<CR>
 "MRU
 nmap ru :MRU<CR>
 
+"Yankring
+nmap yr :YRShow<CR>
+
 "End Key bindings -------------------------------------------------------------
