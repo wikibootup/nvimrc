@@ -99,6 +99,6 @@ let MRU_Window_Height = 5
 
 "Yankring
 let g:yankring_max_history = 20
-let g:yankring_max_display = 20
+let g:yankring_max_display = 80
 
 "End Plugin configuration -----------------------------------------------------
