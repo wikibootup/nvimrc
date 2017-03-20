@@ -81,4 +81,8 @@ vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
 imap <C-v> <Esc>pi
 
+"split pane
+nmap \ :vsp<CR>
+nmap - :sp<CR>
+
 "End Key bindings -------------------------------------------------------------
