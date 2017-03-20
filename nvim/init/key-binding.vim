@@ -75,4 +75,10 @@ nmap ru :MRU<CR>
 "Yankring
 nmap yr :YRShow<CR>
 
+"http://vim.wikia.com/wiki/Quick_yank_and_paste
+"Ctrl + (c,x,v) as copy(yank)
+vmap <C-c> y<Esc>i
+vmap <C-x> d<Esc>i
+imap <C-v> <Esc>pi
+
 "End Key bindings -------------------------------------------------------------
