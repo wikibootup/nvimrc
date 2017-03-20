@@ -20,6 +20,7 @@ Plug 'neomake/neomake'
 Plug 'mileszs/ack.vim'
 Plug 'yegappan/mru'
 Plug 'vim-scripts/YankRing.vim'
+Plug 'Chiel92/vim-autoformat'
 
 "Languages
 Plug 'plasticboy/vim-markdown'
