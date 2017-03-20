@@ -78,9 +78,11 @@ endif
 set mouse+=a
 
 "Using the clipboard as the default register
+"But this makes mouse mode as visual mode. so I disabled it.
+"I use yankring.vim instead.
 "in vim 7.3.74 and higher you can set
 "http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-set clipboard=unnamedplus
+"set clipboard=unnamedplus
 
 "To show space(trail) as ~
 set listchars=trail:~,tab:↹\
