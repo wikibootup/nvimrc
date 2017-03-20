@@ -10,6 +10,10 @@
 - [NeoVim](https://github.com/neovim/neovim/)
 
 - [Plug install](https://github.com/junegunn/vim-plug)
+
+- NOTE: Check plugins' performance before add a plugin
+  - [link](http://stackoverflow.com/a/12216578)
+
 - Vim Color scheme is set although terminal editor set the specific configurations, because
   - 1. the colors of the status lines like SpellBad, SpellCap
 

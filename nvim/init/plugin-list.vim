@@ -1,9 +1,11 @@
 "Plugin list ------------------------------------------------------------------
 
+"NOTE: Check plugins' performance before add
+"http://stackoverflow.com/a/12216578
+
 "Views
 Plug 'dracula/vim'
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+Plug 'itchyny/lightline.vim'
 Plug 'nathanaelkane/vim-indent-guides'
 
 "Utils
@@ -19,8 +21,8 @@ Plug 'ConradIrwin/vim-bracketed-paste'
 Plug 'neomake/neomake'
 Plug 'mileszs/ack.vim'
 Plug 'yegappan/mru'
-Plug 'vim-scripts/YankRing.vim'
 Plug 'Chiel92/vim-autoformat'
+Plug 'tpope/vim-fugitive'
 
 "Languages
 Plug 'plasticboy/vim-markdown'

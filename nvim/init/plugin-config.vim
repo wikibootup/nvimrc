@@ -1,10 +1,12 @@
 "Plugin configuration ---------------------------------------------------------
 
-"Vim-airline
-let g:airline_powerline_fonts = 1
-
-"Vim-airline-themes
-let g:airline_theme='luna'
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ }
 
 "NerdTree
 "To close vim if only one window left
@@ -96,9 +98,5 @@ endif
 "MRU
 let MRU_Max_Entries = 10
 let MRU_Window_Height = 5
-
-"Yankring
-let g:yankring_max_history = 20
-let g:yankring_max_display = 80
 
 "End Plugin configuration -----------------------------------------------------
