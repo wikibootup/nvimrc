@@ -21,7 +21,8 @@ let g:lightline = {
 "NerdTree
 "To close vim if only one window left
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let NERDTreeMapActivateNode='<tab>'
+let NERDTreeMapActivateNode = '<tab>'
+let NERDTreeMouseMode = 3
 
 "Typescript-vim
 let g:typescript_compiler_binary = 'tsc'
