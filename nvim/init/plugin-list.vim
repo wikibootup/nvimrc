@@ -46,8 +46,8 @@ Plug 'othree/es.next.syntax.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 
-"with Electron
-"Pre-Requisite : < NyaoVim > https://github.com/rhysd/NyaoVim
-Plug 'rhysd/nyaovim-markdown-preview'
+"Candidates to apply into VIM after stable configurations.
+"Plug 'majutsushi/tagbar'
+"Plug 'rhysd/nyaovim-markdown-preview'
 
 "End plugin list --------------------------------------------------------------
