@@ -13,3 +13,7 @@ runtime! init/plugin-config.vim
 runtime! init/highlight.vim
 runtime! init/vim-config.vim
 runtime! init/key-binding.vim
+
+"TODO: Seperate as a new file
+"Vim buffer configurations when start buffer
+autocmd BufWinEnter * :MRU

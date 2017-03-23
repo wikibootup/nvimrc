@@ -107,7 +107,7 @@ if executable("rg")
 endif
 
 "MRU
-let MRU_Max_Entries = 20
+let MRU_Max_Entries = 30
 let MRU_Window_Height = 5
 
 "End Plugin configuration -----------------------------------------------------
