@@ -23,7 +23,7 @@ let g:lightline = {
 "NOTE: 'b:NERDTree' has some syntax problem. It may be deleted later.
 "autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let NERDTreeMapActivateNode = '<tab>'
-let NERDTreeMouseMode = 3
+let NERDTreeMouseMode = 2
 
 "Typescript-vim
 let g:typescript_compiler_binary = 'tsc'
@@ -110,5 +110,6 @@ endif
 "MRU
 let MRU_Max_Entries = 30
 let MRU_Window_Height = 5
+let MRU_Auto_Close = 0
 
 "End Plugin configuration -----------------------------------------------------
