@@ -16,4 +16,11 @@ runtime! init/key-binding.vim
 
 "TODO: Seperate as a new file
 "Vim buffer configurations when start buffer
-autocmd BufWinEnter * :MRU
+"MRU
+autocmd VimEnter * MRU
+augroup NERDTreeOpen
+  "NERDTree
+  autocmd VimEnter * NERDTree
+  "To focus edit pane after NERDTree open
+  autocmd VimEnter * wincmd l
+augroup END

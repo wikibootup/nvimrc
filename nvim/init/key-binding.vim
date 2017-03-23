@@ -7,6 +7,8 @@ map <C-e> $
 
 "Quit file
 nmap <C-q> :q<CR>
+"Quit all file
+nmap qa :qa<CR>
 "Save file like GUI editor
 nmap <C-s> :w<CR>
 
