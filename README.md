@@ -48,7 +48,8 @@
 - Font
   - [Inconsolata for Powerline](https://github.com/powerline/fonts)
   - Both Ascii & Non Ascii
-  - 13px(or bigger), medium
+  - 14px(or bigger), medium
+    - If 13px(or smaller) fonts makes editor slow (because many texts should be processed.)
 
 Sources & References
 ---

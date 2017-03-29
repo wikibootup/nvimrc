@@ -117,11 +117,11 @@ set nocursorcolumn
 set nocursorline
 set lazyredraw
 set norelativenumber
-set synmaxcol=128
-syn sync minlines=256 maxlines=256
+set synmaxcol=120
+syn sync minlines=50 maxlines=50
 augroup highlight_speed_up
   autocmd!
-  autocmd BufWinEnter,Syntax * syn sync minlines=256 maxlines=256
+  autocmd BufWinEnter,Syntax * syn sync minlines=50 maxlines=50
 augroup END
 
 "End VIM configuration --------------------------------------------------------
