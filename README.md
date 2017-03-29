@@ -1,11 +1,6 @@
 # nvimrc
 
-### Screenshot ( 02.21.2017 )
-
-![20170221](https://cloud.githubusercontent.com/assets/6479173/23148236/c967b16a-f827-11e6-9a8d-bd248af6a0be.png)
-
 ### Pre-requisites
-
 
 - [NeoVim](https://github.com/neovim/neovim/)
 
