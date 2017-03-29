@@ -15,7 +15,7 @@
   - [link](http://stackoverflow.com/a/12216578)
 
 - Vim Color scheme is set although terminal editor set the specific configurations, because
-  - 1. the colors of the status lines like SpellBad, SpellCap
+  - 1. The status line's color like SpellBad, SpellCap
 
 - Symbolic link some configuration files for plugins
   - .tern-project
@@ -44,6 +44,11 @@
     - integrated with ['ripGrep'](https://github.com/BurntSushi/ripgrep)
       - `$ brew install ripgrep`
       - [link](http://www.wezm.net/technical/2016/09/ripgrep-with-vim/)
+
+- Font
+  - [Inconsolata for Powerline](https://github.com/powerline/fonts)
+  - Both Ascii & Non Ascii
+  - 13px(or bigger), medium
 
 Sources & References
 ---
