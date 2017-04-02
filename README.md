@@ -8,7 +8,7 @@
 - No add Plugins which makes vim slow.
 - Add Autocmds only if necessary.
 
-### Pre-requisites
+## Pre-requisites
 
 - [NeoVim](https://github.com/neovim/neovim/)
 
