@@ -1,5 +1,13 @@
 # nvimrc
 
+## Philosophy
+
+1. Use VIM as **simple** and **useful** as possible.
+
+- Keep it as one file (No import runtime).
+- No add Plugins which makes vim slow.
+- Add Autocmds only if necessary.
+
 ### Pre-requisites
 
 - [NeoVim](https://github.com/neovim/neovim/)
@@ -8,9 +16,6 @@
 
 - NOTE: Check plugins' performance before add a plugin
   - [link](http://stackoverflow.com/a/12216578)
-
-- Vim Color scheme is set although terminal editor set the specific configurations, because
-  - 1. The status line's color like SpellBad, SpellCap
 
 - Symbolic link some configuration files for plugins
   - .tern-project
@@ -26,8 +31,10 @@
   - deoplete, not found completion?
     - compiled NeoVim python module was required, python2,3 in system path was applied for now.
 
-- Colorscheme for matching terminal(iterm2) [Link](https://github.com/mbadolato/iTerm2-Color-Schemes)
-  - Or, now I use 'dracula'. it makes vim faster than others(03/15/2017). [iterm](https://draculatheme.com/iterm/), [editor](https://github.com/dracula/dracula-theme/)
+- Colorscheme for matching terminal(iterm2)
+  - I use iterm Colorscheme and vim colorscheme both (To match syntax highlight in vim).
+  - There are many colorschemes, like tomorrow, dracula, molokai, etc.
+    - But finally I've comeback to use the solarized dark (just my taste).
 
 - Search apps
   - [fzf](https://github.com/junegunn/fzf)
@@ -43,7 +50,7 @@
 - Font
   - [Inconsolata for Powerline](https://github.com/powerline/fonts)
   - Both Ascii & Non Ascii
-  - 14px(or bigger), medium
+  - 14px(or bigger), Bold
     - If 13px(or smaller) fonts makes editor slow (because many texts should be processed.)
 
 Sources & References

@@ -3,24 +3,381 @@ set nocompatible
 
 "VIM-PLUG
 call plug#begin('~/.config/nvim/plugged')
-runtime! init/plugin-list.vim
+
+"Plugin list ------------------------------------------------------------------
+
+"NOTE: Check plugins' performance before add
+"http://stackoverflow.com/a/12216578
+
+"Views
+Plug 'itchyny/lightline.vim'
+Plug 'Yggdroot/indentLine'
+Plug 'altercation/vim-colors-solarized'
+
+"Edit
+Plug 'godlygeek/tabular'
+Plug 'jiangmiao/auto-pairs'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'zchee/deoplete-jedi'
+Plug 'neomake/neomake'
+Plug 'mileszs/ack.vim'
+Plug 'yegappan/mru'
+Plug 'tpope/vim-fugitive'
+Plug 'Konfekt/FastFold'
+
+"Languages
+Plug 'ap/vim-css-color'
+Plug 'moll/vim-node'
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'othree/html5.vim'
+
+Plug 'pangloss/vim-javascript'
+Plug 'jelera/vim-javascript-syntax'
+Plug 'othree/javascript-libraries-syntax.vim'
+Plug 'othree/yajs.vim'
+Plug 'othree/es.next.syntax.vim'
+
+"Finders
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/fzf', { 'do': './install --all' }
+
+"Candidates to apply into VIM after stable configurations.
+"Plug 'majutsushi/tagbar'
+
 "End plugin list --------------------------------------------------------------
+
 call plug#end()
 
-"To set source order, each files to be sourced is specified rather than using
-"**/*.vim
-runtime! init/plugin-config.vim
-runtime! init/highlight.vim
-runtime! init/vim-config.vim
-runtime! init/key-binding.vim
+"Plugin configuration ---------------------------------------------------------
 
-"TODO: Seperate as a new file
-"Vim buffer configurations when start buffer
-"MRU
-autocmd VimEnter * MRU
+let g:lightline = {
+      \ 'colorscheme': 'seoul256',
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+      \ },
+      \ 'component': {
+      \   'readonly': '%{&filetype=="help"?"":&readonly?"RO":""}',
+      \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ },
+      \ }
+
+"NerdTree
+let NERDTreeMapActivateNode = '<tab>'
+let NERDTreeMouseMode = 2
+
 augroup NERDTreeOpen
+  autocmd!
   "NERDTree
   autocmd VimEnter * NERDTree
   "To focus edit pane after NERDTree open
   autocmd VimEnter * wincmd l
 augroup END
+
+"Typescript-vim
+let g:typescript_compiler_binary = 'tsc'
+let g:typescript_compiler_options = ''
+augroup TypescriptForVim
+  autocmd!
+  autocmd FileType typescript :set makeprg=tsc
+  autocmd QuickFixCmdPost [^l]* nested cwindow
+  autocmd QuickFixCmdPost    l* nested lwindow
+augroup END
+
+"deoplete.vim
+let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
+let g:deoplete#enable_at_startup = 1
+inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+
+"omnifuncs for deoplete
+augroup omnifuncs
+  autocmd!
+  autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+  autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+  autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+augroup end
+
+" tern
+if exists('g:plugs["tern_for_vim"]')
+  let g:tern_show_argument_hints = 'on_hold'
+  let g:tern_show_signature_in_pum = 1
+
+  augroup ExistTernForVim
+    autocmd!
+    autocmd FileType javascript setlocal omnifunc=tern#Complete
+  augroup END
+endif
+
+"deoplete-ternjs
+let g:tern_request_timeout = 1
+let g:tern_show_signature_in_pum = '0'  " This do disable full signature type on autocomplete
+" Use tern_for_vim.
+let g:tern#command = ["tern"]
+let g:tern#arguments = ["--persistent"]
+
+let g:deoplete#omni#functions = {}
+let g:deoplete#omni#functions.javascript = [
+  \ 'tern#Complete',
+  \ 'jspc#omni'
+\]
+
+"Neomake
+"neomake makes work process slow bacase it causes a delay whenever the current buffer is saved
+"use ':lopen' instead.
+"https://github.com/neomake/neomake#file-makers
+let g:neomake_open_list = 0
+let g:neomake_list_height = 5
+let g:neomake_javascript_jshint_maker = {
+    \ 'args': ['--verbose'],
+    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+    \ }
+let g:neomake_javascript_enabled_makers = ['jshint']
+augroup Neomake
+  autocmd!
+  autocmd BufWritePost * Neomake
+augroup END
+
+"othree/javascript-libraries-syntax.vim
+let libs = 'jquery,underscore,backbone,angularjs,d3,requirejs,angularui'
+let g:used_javascript_libs = libs
+augroup JavascriptLibrariesSyntax
+  autocmd!
+  autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
+augroup END
+
+"IndentLine
+let g:indentLine_color_term = 239
+let g:indentLine_char = '·'
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
+let g:indentLine_faster = 1
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
+
+"RipGrep integration
+"http://www.wezm.net/technical/2016/09/ripgrep-with-vim/
+if executable("rg")
+  let g:ackprg = 'rg --vimgrep --no-heading -i'
+endif
+
+"MRU
+let MRU_Max_Entries = 30
+let MRU_Window_Height = 5
+let MRU_Auto_Close = 0
+
+augroup MRU
+  autocmd!
+  autocmd VimEnter * MRU
+augroup END
+
+"Fastfold
+let g:fastfold_savehook = 1
+let g:fastfold_fdmhook = 0
+let g:tex_fold_enabled = 1
+let g:vimsyn_folding = 'af'
+let g:javascript_fold = 1
+let g:python_fold = 1
+let g:go_fold = 1
+let g:html_fold = 1
+
+"End Plugin configuration -----------------------------------------------------
+
+"View & Highlighters-------------------------------------------------------------
+
+set background=dark
+colorscheme solarized
+
+"End View & Highlighters  -------------------------------------------------------------
+
+"VIM configuration ------------------------------------------------------------
+
+"Must be set first before configurations
+filetype plugin indent on
+syntax enable
+
+"Enable line numbers
+set number
+"Softtab -- use spaces instead tabs.
+set expandtab
+set tabstop=2 shiftwidth=2 sts=2
+
+"I dislike CRLF.
+if !exists("vimpager")
+  set fileformat=unix
+endif
+
+set backspace=2
+
+"case insensitve search
+set ignorecase
+
+"Prefer UTF-8.
+set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
+
+"Some additional syntax highlighters.
+au! BufRead,BufNewFile *.wsgi setfiletype python
+au! BufRead,BufNewFile *.sass setfiletype sass
+au! BufRead,BufNewFile *.scss setfiletype scss
+au! BufRead,BufNewFile *.haml setfiletype haml
+au! BufRead,BufNewFile *.less setfiletype less
+
+"These languages have their own tab/indent settings.
+augroup IndentLanguages
+  au!
+  au FileType py    setl ts=4 sw=4 sts=4
+  au FileType cpp    setl ts=4 sw=4 sts=4
+  au FileType ruby   setl ts=2 sw=2 sts=2
+  au FileType yaml   setl ts=2 sw=2 sts=2
+  au FileType html   setl ts=2 sw=2 sts=2
+  au FileType jinja  setl ts=2 sw=2 sts=2
+  au FileType lua    setl ts=2 sw=2 sts=2
+  au FileType haml   setl ts=2 sw=2 sts=2
+  au FileType sass   setl ts=2 sw=2 sts=2
+  au FileType scss   setl ts=2 sw=2 sts=2
+  au FileType make   setl ts=4 sw=4 sts=4 noet
+  au FileType markdown   setl ts=2 sw=2 sts=2
+  au FileType gitcommit setl spell
+augroup END
+
+"English spelling checker.
+setlocal spelllang=en_us
+
+set novisualbell
+
+"mouse mode enabled automatically (somewhere), but I set it expliciltly.
+set mouse+=a
+
+"Using the clipboard as the default register
+"But this makes mouse mode as visual mode. so I disabled it.
+"I use yankring.vim instead.
+"in vim 7.3.74 and higher you can set
+"http://vim.wikia.com/wiki/Accessing_the_system_clipboard
+set clipboard=unnamedplus
+
+"To show space(trail) as ~
+set listchars=trail:~,tab:↹\
+set list
+
+"Folding
+set foldmethod=indent
+set foldlevel=99
+
+"Allows hiding buffers even though they contain modifications
+"Issue with neovim & vim-airline : https://github.com/neovim/neovim/issues/4524
+"http://www.guckes.net/vim/setup.html
+set hid
+
+"Speed up Syntax Highlighting
+set nocursorcolumn
+set nocursorline
+"set lazyredraw "It makes no effect(or more slow?!) from personal experience
+set ttyfast
+set norelativenumber
+set synmaxcol=120
+syn sync minlines=50 maxlines=50
+
+"End VIM configuration --------------------------------------------------------
+
+"Key bindings -----------------------------------------------------------------
+
+"Move to beginning of the current line
+map <C-a> 0
+"Move to end of line
+map <C-e> $
+
+"Quit file
+nmap <C-q> :q<CR>
+"Quit all file
+nmap qa :qa<CR>
+"Save file like GUI editor
+nmap <C-s> :w<CR>
+
+"Nerdtree
+nmap q :NERDTreeToggle<cr>
+let NERDTreeMapOpenVSplit="<C-v>"
+let NERDTreeMapOpenSplit="<C-s>"
+
+"Vim surround
+"surround a word & insert surround text mode
+nmap s ysiw
+
+"FZF
+nmap fz :FZF <cr>
+"fzf key map to be equal with NerdTree
+let g:fzf_action = {
+  \ 'ctrl-s': 'split',
+  \ 'ctrl-v': 'vsplit'
+  \ }
+
+"Tern for js, auto key map not working now
+"augroup TernForJs
+"  autocmd!
+"  autocmd FileType javascript nnoremap <silent> <buffer> td :TernDef<CR>
+"augroup END
+
+"Remove all trailing whitespace
+nmap Rtrailing :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+"Remove all tab space
+nmap Rtab :%s/\t/  /g
+"Remove all tab space and trailing
+nmap RT RtrailingRtab<CR>
+
+" No highlight in search result
+nmap nh :nohlsearch<CR>
+
+"Atags.vim
+"Generate tags everytime a file is being written.
+" generating tags when save makes system(vi speed) slow.
+"autocmd BufWritePost * call atags#generate()
+nmap gT :call atags#generate()<CR>
+
+"Folding
+"fold (ex: level=<input><CR>)
+nmap fd :setlocal foldlevel=
+"Toggle
+nmap <Tab> zO
+nmap <s-Tab> zc
+
+"Ack.vim
+"type Ack, then it makes Ack!, because [I don't want to jump to the first result automatically.]
+"https://github.com/mileszs/ack.vim#i-dont-want-to-jump-to-the-first-result-automatically
+cnoreabbrev Ack Ack!
+nnoremap <Leader>a :Ack!<Space>
+map <S-f> :Ack 
+map <C-f> :LAckWindow! -H 
+let g:ack_mappings = {
+  \ "<C-v>": "<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t",
+  \ "<C-s>": "<C-W><CR><C-W>K" }
+
+"http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
+nmap <S-Up> :wincmd k<CR>
+nmap <S-Down> :wincmd j<CR>
+nmap <S-Left> :wincmd h<CR>
+nmap <S-Right> :wincmd l<CR>
+
+"MRU
+nmap ru :MRU<CR>
+
+"Yankring
+nmap yr :YRShow<CR>
+
+"http://vim.wikia.com/wiki/Quick_yank_and_paste
+"Ctrl + (c,x,v) as copy(yank)
+vmap <C-c> y<Esc>i
+vmap <C-x> d<Esc>i
+imap <C-v> <Esc>pi
+
+"split pane
+nmap \ :vsp<CR>
+nmap - :sp<CR>
+
+"End Key bindings -------------------------------------------------------------
