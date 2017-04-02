@@ -11,7 +11,6 @@ call plug#begin('~/.config/nvim/plugged')
 
 "Views
 Plug 'itchyny/lightline.vim'
-Plug 'Yggdroot/indentLine'
 Plug 'altercation/vim-colors-solarized'
 
 "Edit
@@ -24,6 +23,7 @@ Plug 'mileszs/ack.vim'
 Plug 'yegappan/mru'
 Plug 'tpope/vim-fugitive'
 Plug 'Konfekt/FastFold'
+Plug 'terryma/vim-multiple-cursors'
 
 "Languages
 Plug 'ap/vim-css-color'
@@ -154,14 +154,6 @@ augroup JavascriptLibrariesSyntax
   autocmd!
   autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 augroup END
-
-"IndentLine
-let g:indentLine_color_term = 239
-let g:indentLine_char = '·'
-let g:indentLine_concealcursor = 'inc'
-let g:indentLine_conceallevel = 2
-let g:indentLine_faster = 1
-let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*']
 
 "RipGrep integration
 "http://www.wezm.net/technical/2016/09/ripgrep-with-vim/
@@ -325,20 +317,9 @@ let g:fzf_action = {
 "augroup END
 
 "Remove all trailing whitespace
-nmap Rtrailing :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nmap :clearTRAILING :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "Remove all tab space
-nmap Rtab :%s/\t/  /g
-"Remove all tab space and trailing
-nmap RT RtrailingRtab<CR>
-
-" No highlight in search result
-nmap nh :nohlsearch<CR>
-
-"Atags.vim
-"Generate tags everytime a file is being written.
-" generating tags when save makes system(vi speed) slow.
-"autocmd BufWritePost * call atags#generate()
-nmap gT :call atags#generate()<CR>
+nmap :clearTAB :%s/\t/  /g
 
 "Folding
 "fold (ex: level=<input><CR>)
@@ -354,9 +335,6 @@ cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 map <S-f> :Ack 
 map <C-f> :LAckWindow! -H 
-let g:ack_mappings = {
-  \ "<C-v>": "<C-W><CR><C-W>H<C-W>b<C-W>J<C-W>t",
-  \ "<C-s>": "<C-W><CR><C-W>K" }
 
 "http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
 nmap <S-Up> :wincmd k<CR>
@@ -366,9 +344,6 @@ nmap <S-Right> :wincmd l<CR>
 
 "MRU
 nmap ru :MRU<CR>
-
-"Yankring
-nmap yr :YRShow<CR>
 
 "http://vim.wikia.com/wiki/Quick_yank_and_paste
 "Ctrl + (c,x,v) as copy(yank)
