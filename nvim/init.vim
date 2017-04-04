@@ -274,7 +274,7 @@ set nocursorline
 "set lazyredraw "It makes no effect(or more slow?!) from personal experience
 set ttyfast
 set norelativenumber
-set synmaxcol=120
+set synmaxcol=400 "set enough(but not too long) column length.
 syn sync minlines=50 maxlines=50
 
 "End VIM configuration --------------------------------------------------------
