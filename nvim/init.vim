@@ -69,17 +69,14 @@ let g:lightline = {
       \ },
       \ }
 
+"MRU
+let MRU_Max_Entries = 30
+let MRU_Window_Height = 5
+let MRU_Auto_Close = 0
+
 "NerdTree
 let NERDTreeMapActivateNode = '<tab>'
 let NERDTreeMouseMode = 2
-
-augroup NERDTreeOpen
-  autocmd!
-  "NERDTree
-  autocmd VimEnter * NERDTree
-  "To focus edit pane after NERDTree open
-  autocmd VimEnter * wincmd l
-augroup END
 
 "Typescript-vim
 let g:typescript_compiler_binary = 'tsc'
@@ -160,16 +157,6 @@ augroup END
 if executable("rg")
   let g:ackprg = 'rg --vimgrep --no-heading -i'
 endif
-
-"MRU
-let MRU_Max_Entries = 30
-let MRU_Window_Height = 5
-let MRU_Auto_Close = 0
-
-augroup MRU
-  autocmd!
-  autocmd VimEnter * MRU
-augroup END
 
 "Fastfold
 let g:fastfold_savehook = 1
@@ -356,3 +343,21 @@ nmap \ :vsp<CR>
 nmap - :sp<CR>
 
 "End Key bindings -------------------------------------------------------------
+
+"VimEnter configurations ------------------------------------------------------
+"NOTE: Order is important in this block.
+
+augroup MRU
+  autocmd!
+  autocmd VimEnter * MRU
+augroup END
+
+augroup NERDTreeOpen
+  autocmd!
+  "NERDTree
+  autocmd VimEnter * NERDTree
+  "To focus edit pane after NERDTree open
+  autocmd VimEnter * wincmd l
+augroup END
+
+"END VimEnter configuration ---------------------------------------------------
