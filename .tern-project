@@ -10,7 +10,8 @@
     "ecma5",
     "ecma6",
     "browser",
-    "jquery"
+    "jquery",
+    "chai"
   ],
   "ecmaVersion": 6
 }

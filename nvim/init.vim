@@ -9,11 +9,15 @@ call plug#begin('~/.config/nvim/plugged')
 "NOTE: Check plugins' performance before add
 "http://stackoverflow.com/a/12216578
 
+"-----------------------------------------------------------------------------
 "Views
+"-----------------------------------------------------------------------------
 Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
 
+"-----------------------------------------------------------------------------
 "Edit
+"-----------------------------------------------------------------------------
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -24,26 +28,38 @@ Plug 'yegappan/mru'
 Plug 'tpope/vim-fugitive'
 Plug 'Konfekt/FastFold'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
 
+"-----------------------------------------------------------------------------
 "Languages
+"-----------------------------------------------------------------------------
 Plug 'ap/vim-css-color'
-Plug 'moll/vim-node'
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
-Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'othree/html5.vim'
 
+"JAVASCRIPT
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
+Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
+Plug 'heavenshell/vim-jsdoc'
 
+Plug 'fatih/vim-go'
+
+"-----------------------------------------------------------------------------
 "Finders
+"-----------------------------------------------------------------------------
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': './install --all' }
+Plug 'majutsushi/tagbar'
 
-"Candidates to apply into VIM after stable configurations.
-"Plug 'majutsushi/tagbar'
+"-----------------------------------------------------------------------------
+"Misc
+"-----------------------------------------------------------------------------
+Plug 'junegunn/goyo.vim'
 
 "End plugin list --------------------------------------------------------------
 
@@ -51,6 +67,65 @@ call plug#end()
 
 "Plugin configuration ---------------------------------------------------------
 
+"VIM-jsdoc
+let g:jsdoc_underscore_private = 1
+
+"------------------------------------------------------------------------------
+"vim-javascript
+let g:javascript_plugin_jsdoc = 1
+let g:javascript_plugin_flow = 1
+
+"------------------------------------------------------------------------------
+"Tagbar
+nmap tag :TagbarToggle<CR>
+nmap tfd :TagbarSetFoldlevel
+let g:tagbar_sort = 0
+let g:tagbar_singleclick = 1
+let g:tagbar_iconchars = ['▸', '▾']
+let g:tagbar_compact = 1
+
+"Tagbar for javascript from https://github.com/hushicai/tagbar-javascript.vim
+let g:tagbar_type_javascript = {
+    \ 'ctagsbin'  : 'esctags',
+    \ 'ctagsargs' : '--memory="' . '128M' . '" -f -',
+    \ 'kinds'     : [
+        \ 'a:PARM',
+        \ 'v:VAR',
+        \ 'p:PROP',
+        \ 'c:context'
+    \ ],
+    \ 'sro'        : '::',
+    \ 'kind2scope' : {
+        \ 'c' : 'context',
+    \ },
+    \ 'scope2kind' : {
+        \ 'context'  : 'c'
+    \ }
+    \ }
+
+let g:tagbar_type_vim = {
+            \ 'ctagstype' : 'vim',
+            \ 'kinds' : [
+            \ 't:BLOCK',
+            \ 'v:VAR:1:0',
+            \ 'f:FUNC:1:0',
+            \ 'a:AUTOCMD',
+            \ 'c:COMMAND',
+            \ 'm:MAP',
+            \ ],
+            \ }
+
+let g:tagbar_type_sh = {
+            \ 'ctagstype' : 'sh',
+            \ 'kinds' : [
+            \ 'v:VAR',
+            \ 'f:FUNC:1:0',
+            \ 'a:ALIAS',
+            \ ]
+            \ }
+
+"------------------------------------------------------------------------------
+"Lightline
 let g:lightline = {
       \ 'colorscheme': 'seoul256',
       \ 'active': {
@@ -304,9 +379,9 @@ let g:fzf_action = {
 "augroup END
 
 "Remove all trailing whitespace
-nmap :clearTRAILING :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
+nmap CTRAIL :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
 "Remove all tab space
-nmap :clearTAB :%s/\t/  /g
+nmap CTAB :%s/\t/  /g<CR>
 
 "Folding
 "fold (ex: level=<input><CR>)
@@ -320,8 +395,8 @@ nmap <s-Tab> zc
 "https://github.com/mileszs/ack.vim#i-dont-want-to-jump-to-the-first-result-automatically
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
-map <S-f> :Ack 
-map <C-f> :LAckWindow! -H 
+map <S-f> :Ack \
+map <C-f> :LAckWindow! -H \
 
 "http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
 nmap <S-Up> :wincmd k<CR>
@@ -359,5 +434,7 @@ augroup NERDTreeOpen
   "To focus edit pane after NERDTree open
   autocmd VimEnter * wincmd l
 augroup END
+
+autocmd VimEnter * nested :TagbarOpen
 
 "END VimEnter configuration ---------------------------------------------------

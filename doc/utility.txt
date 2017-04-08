@@ -1,1 +1,5 @@
-Word search : <S-#> at the word
+Word search
+<S-#> at the word
+
+NERDTREE
+Key 't'(cursor at the nerdtree navigation bar) makes new tab in the top

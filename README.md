@@ -8,6 +8,9 @@
 - No add Plugins which makes vim slow.
 - Add Autocmds only if necessary.
 
+2. Package manager priority
+  - VIM(plug) >= OS(brew) > NODE(npm)
+
 ## Pre-requisites
 
 - [NeoVim](https://github.com/neovim/neovim/)
@@ -20,16 +23,19 @@
 - Symbolic link some configuration files for plugins
   - .tern-project
 
-- Tern no module named ...
-  - `npm install` at './nvim/plugged/tern_for_vim'
-  - [Reference](https://vimeo.com/67215272)
-
 - Neovim plugins
   - Tern no module named ...
     - `npm install` at './nvim/plugged/tern_for_vim'
     - [Reference](https://vimeo.com/67215272)
   - deoplete, not found completion?
     - compiled NeoVim python module was required, python2,3 in system path was applied for now.
+  - Vim-javascript
+    - Install '[jsdoc](http://usejsdoc.org/)', '[flow](https://flow.org/)'
+      - `$ npm install -g jsdoc`
+      - `$ brew install flow`
+  - Tagbar-javascript
+    - I've tried to find many ways to make tagbar for JS, then I selected it.
+    - `$ npm install -g esctags`
 
 - Colorscheme for matching terminal(iterm2)
   - I use iterm Colorscheme and vim colorscheme both (To match syntax highlight in vim).
