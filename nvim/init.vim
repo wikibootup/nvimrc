@@ -33,8 +33,12 @@ Plug 'tpope/vim-commentary'
 "-----------------------------------------------------------------------------
 "Languages
 "-----------------------------------------------------------------------------
-Plug 'ap/vim-css-color'
 Plug 'othree/html5.vim'
+Plug 'mattn/emmet-vim'
+
+"CSS
+Plug 'ap/vim-css-color'
+Plug 'hail2u/vim-css3-syntax'
 
 "JAVASCRIPT
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
@@ -66,6 +70,14 @@ Plug 'junegunn/goyo.vim'
 call plug#end()
 
 "Plugin configuration ---------------------------------------------------------
+
+"CSS3-syntax
+setlocal iskeyword+=-
+augroup VimCSS3Syntax
+  autocmd!
+
+  autocmd FileType css setlocal iskeyword+=-
+augroup END
 
 "VIM-jsdoc
 let g:jsdoc_underscore_private = 1
@@ -311,11 +323,9 @@ set novisualbell
 set mouse+=a
 
 "Using the clipboard as the default register
-"But this makes mouse mode as visual mode. so I disabled it.
-"I use yankring.vim instead.
-"in vim 7.3.74 and higher you can set
 "http://vim.wikia.com/wiki/Accessing_the_system_clipboard
-set clipboard=unnamedplus
+"Commented. See 'doc/utility.txt'
+"set clipboard=unnamedplus
 
 "To show space(trail) as ~
 set listchars=trail:~,tab:↹\

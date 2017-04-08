@@ -3,3 +3,12 @@ Word search
 
 NERDTREE
 Key 't'(cursor at the nerdtree navigation bar) makes new tab in the top
+
+EMMET
+emmet_expandabbr_key
+  - is working on n,i mode
+  - the key binding '<C-y>,' I interpreted as 'a rest' before completion
+
+Yank & Clipboard
+  - To copy into clipboard, I use <C-c>, <C-x>, <C-v>
+  - To yank, just y. I commented 'unnamedplus' to seperate purpose.
