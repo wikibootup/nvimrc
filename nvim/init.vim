@@ -84,9 +84,9 @@ augroup END
 let g:jsdoc_access_descriptions = 2
 
 "Input configuration
-let g:jsdoc_input_description = 0
-let g:jsdoc_allow_input_prompt = 0
-let g:jsdoc_return_description = 0
+let g:jsdoc_input_description = 1
+let g:jsdoc_allow_input_prompt = 1
+let g:jsdoc_return_description = 1
 
 let g:jsdoc_underscore_private = 1
 let g:jsdoc_param_description_separator = ' - '

@@ -12,3 +12,8 @@ emmet_expandabbr_key
 Yank & Clipboard
   - To copy into clipboard, I use <C-c>, <C-x>, <C-v>
   - To yank, just y. I commented 'unnamedplus' to seperate purpose.
+
+VIM jsdoc
+  - I force to insert input prompt when :JsDoc
+    I think it is faster & explicit way.
+    But if want to create empty format, press ESC or ENTER continuosly.
