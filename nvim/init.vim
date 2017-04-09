@@ -79,8 +79,33 @@ augroup VimCSS3Syntax
   autocmd FileType css setlocal iskeyword+=-
 augroup END
 
+"-----------------------------------------------------------------------------
 "VIM-jsdoc
+let g:jsdoc_access_descriptions = 2
+
+"Input configuration
+let g:jsdoc_input_description = 0
+let g:jsdoc_allow_input_prompt = 0
+let g:jsdoc_return_description = 0
+
 let g:jsdoc_underscore_private = 1
+let g:jsdoc_param_description_separator = ' - '
+let g:jsdoc_custom_args_hook = {
+\ 'callback\|cb': {
+\   'type': '{Function}',
+\   'description': 'Callback function'
+\ },
+\ '^[a-zA-Z]+[a-zA-Z0-9]*$': {
+\   'type': '{good}',
+\   'description': 'description here'
+\ },
+\   '^_\?is': {
+\     'type': '{Boolean}'
+\   },
+\   'options$': {
+\     'type': '{Object}'
+\   },
+\}
 
 "------------------------------------------------------------------------------
 "vim-javascript
@@ -426,6 +451,14 @@ imap <C-v> <Esc>pi
 "split pane
 nmap \ :vsp<CR>
 nmap - :sp<CR>
+
+"vim-Jsdoc
+nmap j :JsDoc<CR>
+
+"-----------------------------------------------------------------------------
+"Tabular
+"jsdoc to align same column positions
+vmap { :Tabularize/ {/l0<CR>:Tabularize/}\zs<CR>:Tabularize/-<CR>
 
 "End Key bindings -------------------------------------------------------------
 
