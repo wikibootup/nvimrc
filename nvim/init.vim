@@ -267,6 +267,9 @@ augroup JavascriptLibrariesSyntax
   autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 augroup END
 
+"Unset html linter(tidy) because it makes too slow when save
+let g:neomake_html_enabled_makers = []
+
 "RipGrep integration
 "http://www.wezm.net/technical/2016/09/ripgrep-with-vim/
 if executable("rg")
