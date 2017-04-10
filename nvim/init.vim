@@ -33,8 +33,11 @@ Plug 'tpope/vim-commentary'
 "-----------------------------------------------------------------------------
 "Languages
 "-----------------------------------------------------------------------------
+
+"HTML
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
+Plug 'Valloric/MatchTagAlways'
 
 "CSS
 Plug 'ap/vim-css-color'
@@ -280,14 +283,15 @@ let g:python_fold = 1
 let g:go_fold = 1
 let g:html_fold = 1
 
+
 "End Plugin configuration -----------------------------------------------------
 
-"View & Highlighters-------------------------------------------------------------
+"View & Highlighters-----------------------------------------------------------
 
 set background=dark
 colorscheme solarized
 
-"End View & Highlighters  -------------------------------------------------------------
+"End View & Highlighters  -----------------------------------------------------
 
 "VIM configuration ------------------------------------------------------------
 
@@ -391,13 +395,8 @@ nmap qa :qa<CR>
 nmap <C-s> :w<CR>
 
 "Nerdtree
-nmap q :NERDTreeToggle<cr>
 let NERDTreeMapOpenVSplit="<C-v>"
 let NERDTreeMapOpenSplit="<C-s>"
-
-"Vim surround
-"surround a word & insert surround text mode
-nmap s ysiw
 
 "FZF
 nmap fz :FZF <cr>
@@ -439,9 +438,6 @@ nmap <S-Down> :wincmd j<CR>
 nmap <S-Left> :wincmd h<CR>
 nmap <S-Right> :wincmd l<CR>
 
-"MRU
-nmap ru :MRU<CR>
-
 "http://vim.wikia.com/wiki/Quick_yank_and_paste
 "Ctrl + (c,x,v) as copy(yank)
 vmap <C-c> y<Esc>i
@@ -451,9 +447,6 @@ imap <C-v> <Esc>pi
 "split pane
 nmap \ :vsp<CR>
 nmap - :sp<CR>
-
-"vim-Jsdoc
-nmap j :JsDoc<CR>
 
 "-----------------------------------------------------------------------------
 "Tabular
@@ -481,3 +474,17 @@ augroup END
 autocmd VimEnter * nested :TagbarOpen
 
 "END VimEnter configuration ---------------------------------------------------
+
+"-----------------------------------------------------------------------------
+"Last configuration(including Plugins)
+" - to solve the order dependency
+"-----------------------------------------------------------------------------
+
+"MatchTagAlways
+let g:mta_set_default_matchtag_color = 0
+let g:mta_use_matchparen_group = 0
+highlight MatchTag ctermfg=white ctermbg=black
+
+"-----------------------------------------------------------------------------
+"END Last configuration(including Plugins)
+"-----------------------------------------------------------------------------
