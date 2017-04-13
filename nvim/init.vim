@@ -206,6 +206,8 @@ augroup END
 "deoplete.vim
 let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
 let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
+let g:deoplete#max_list = 30
+let g:deoplete#max_abbr_width = 50
 let g:deoplete#enable_at_startup = 1
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
@@ -213,7 +215,13 @@ inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 augroup omnifuncs
   autocmd!
   autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
-  autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+  "NOTE: [Time killer issue] I unset html,markdown omnifunc expliciltly.
+  "Because,
+  "1. set=ommnifunc=htmlcomplete#CompleteTags now makes too many suggestions.
+  "2. It ignores deoplete configuration.
+  "3. It also has a problem with HTML5
+  "Although I unset this configuration, auto-suggestion works normally.
+  autocmd FileType html,markdown setlocal omnifunc=
   autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
   autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
   autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
