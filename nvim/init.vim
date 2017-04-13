@@ -301,6 +301,7 @@ let g:html_fold = 1
 
 set background=dark
 colorscheme solarized
+lef g:solarized_visibility= 'high'
 
 "End View & Highlighters  -----------------------------------------------------
 
