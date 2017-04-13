@@ -301,7 +301,10 @@ let g:html_fold = 1
 
 set background=dark
 colorscheme solarized
-lef g:solarized_visibility= 'high'
+"Set term color palette to 256, and auto
+let g:solarized_termcolors = 256
+"Set the default color with the best option for ITERM2 expliciltly.
+let g:solarized_termtrans = 1
 
 "End View & Highlighters  -----------------------------------------------------
 
