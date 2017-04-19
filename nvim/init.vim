@@ -119,6 +119,7 @@ let g:javascript_plugin_flow = 1
 "Tagbar
 nmap tag :TagbarToggle<CR>
 nmap tfd :TagbarSetFoldlevel
+let g:tagbar_foldlevel = 2
 let g:tagbar_sort = 0
 let g:tagbar_singleclick = 1
 let g:tagbar_iconchars = ['▸', '▾']
@@ -467,13 +468,20 @@ nmap - :sp<CR>
 "Tabular
 "jsdoc to align same column positions
 vmap { :Tabularize/ {/l0<CR>:Tabularize/}\zs<CR>:Tabularize/-<CR>
+"-----------------------------------------------------------------------------
+
+"New terminal in the top of the active pane
+nmap term :new<CR>:wincmd k<CR>:resize 5<CR>:terminal<CR>
+
+"New vertical pane at the side of the window
+nmap side :vnew<CR>:wincmd l<CR>:vertical resize 40<CR>:wincmd h<CR>
 
 "End Key bindings -------------------------------------------------------------
 
 "VimEnter configurations ------------------------------------------------------
 "NOTE: Order is important in this block.
 
-augroup MRU
+augroup MRUOpen
   autocmd!
   autocmd VimEnter * MRU
 augroup END
@@ -486,7 +494,13 @@ augroup NERDTreeOpen
   autocmd VimEnter * wincmd l
 augroup END
 
-autocmd VimEnter * nested :TagbarOpen
+"Make a new 'Vertical New Pane Side' & back to the main pane
+"TagbarOpen may cause a delay for the large file, Toggle off(or turn off) if
+"you mind that.
+augroup TagbarOpen
+  au!
+  autocmd VimEnter * :TagbarOpen
+augroup END
 
 "END VimEnter configuration ---------------------------------------------------
 
