@@ -125,24 +125,9 @@ let g:tagbar_singleclick = 1
 let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_compact = 1
 
-"Tagbar for javascript from https://github.com/hushicai/tagbar-javascript.vim
 let g:tagbar_type_javascript = {
-    \ 'ctagsbin'  : 'esctags',
-    \ 'ctagsargs' : '--memory="' . '128M' . '" -f -',
-    \ 'kinds'     : [
-        \ 'a:PARM',
-        \ 'v:VAR',
-        \ 'p:PROP',
-        \ 'c:context'
-    \ ],
-    \ 'sro'        : '::',
-    \ 'kind2scope' : {
-        \ 'c' : 'context',
-    \ },
-    \ 'scope2kind' : {
-        \ 'context'  : 'c'
-    \ }
-    \ }
+  \ 'ctagsbin'  : 'jsctags',
+  \ }
 
 let g:tagbar_type_vim = {
             \ 'ctagstype' : 'vim',

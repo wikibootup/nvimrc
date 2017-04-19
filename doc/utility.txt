@@ -17,3 +17,7 @@ VIM jsdoc
   - I force to insert input prompt when :JsDoc
     I think it is faster & explicit way.
     But if want to create empty format, press ESC or ENTER continuosly.
+
+Tagbar
+  - I Transferred the default jsctags from Esctags & nested
+    checking configuration for the reason of the speed issue
