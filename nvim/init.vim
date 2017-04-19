@@ -321,6 +321,9 @@ set number
 set expandtab
 set tabstop=2 shiftwidth=2 sts=2
 
+"locate the new pane at the right when split
+set splitright
+
 "I dislike CRLF.
 if !exists("vimpager")
   set fileformat=unix
@@ -473,8 +476,8 @@ vmap { :Tabularize/ {/l0<CR>:Tabularize/}\zs<CR>:Tabularize/-<CR>
 "New terminal in the top of the active pane
 nmap term :new<CR>:wincmd k<CR>:resize 5<CR>:terminal<CR>
 
-"New vertical pane at the side of the window
-nmap side :vnew<CR>:wincmd l<CR>:vertical resize 40<CR>:wincmd h<CR>
+"New vertical pane at the side of the window (Condition: "splitright" is set.)
+nmap side :vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
 
 "End Key bindings -------------------------------------------------------------
 
