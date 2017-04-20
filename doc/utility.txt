@@ -19,5 +19,5 @@ VIM jsdoc
     But if want to create empty format, press ESC or ENTER continuosly.
 
 Tagbar
-  - I Transferred the default jsctags from Esctags & nested
-    checking configuration for the reason of the speed issue
+- TagbarOpen may cause a delay for the large file, Toggle off(or turn off) if
+  you mind that.

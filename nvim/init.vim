@@ -125,8 +125,23 @@ let g:tagbar_singleclick = 1
 let g:tagbar_iconchars = ['▸', '▾']
 let g:tagbar_compact = 1
 
+"Tagbar for javascript from https://github.com/hushicai/tagbar-javascript.vim
 let g:tagbar_type_javascript = {
-  \ 'ctagsbin'  : 'jsctags',
+  \ 'ctagsbin'  : 'esctags',
+  \ 'ctagsargs' : '--memory="' . '128M' . '" -f -',
+  \ 'kinds'     : [
+    \ 'a:PARM',
+    \ 'v:VAR',
+    \ 'p:PROP',
+    \ 'c:context'
+  \ ],
+  \ 'sro'        : '::',
+  \ 'kind2scope' : {
+      \ 'c' : 'context',
+  \ },
+  \ 'scope2kind' : {
+      \ 'context'  : 'c'
+  \ }
   \ }
 
 let g:tagbar_type_vim = {
@@ -483,11 +498,11 @@ augroup NERDTreeOpen
 augroup END
 
 "Make a new 'Vertical New Pane Side' & back to the main pane
-"TagbarOpen may cause a delay for the large file, Toggle off(or turn off) if
-"you mind that.
-augroup TagbarOpen
+augroup SideRightOpen
   au!
-  autocmd VimEnter * :TagbarOpen
+  autocmd VimEnter * :vnew
+  autocmd VimEnter * :vertical resize 40
+  autocmd VimEnter * :wincmd h
 augroup END
 
 "END VimEnter configuration ---------------------------------------------------
