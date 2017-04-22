@@ -322,8 +322,13 @@ endif
 
 set backspace=2
 
-"case insensitve search
-"set ignorecase
+"Case insensitve in cmdline
+"NOTE: Must be set for other insensitve configurations
+set ignorecase
+"Case sensitive when search & replace
+set smartcase
+"Case insensitive when cmdline tab autocompletion
+set infercase
 
 "Prefer UTF-8.
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
@@ -459,7 +464,7 @@ imap <C-v> <Esc>pi
 "-----------------------------------------------------------------------------
 "Tabular
 "jsdoc to align same column positions
-vmap { :Tabularize/ {/l0<CR>:Tabularize/}\zs<CR>:Tabularize/-<CR>
+cmap alignJSDoc :Tabularize/ {/l1<CR>:Tabularize/}\zs<CR>:Tabularize/-<CR>
 "-----------------------------------------------------------------------------
 
 "New terminal in the top of the active pane
