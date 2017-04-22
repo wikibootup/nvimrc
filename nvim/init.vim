@@ -26,7 +26,6 @@ Plug 'neomake/neomake'
 Plug 'mileszs/ack.vim'
 Plug 'yegappan/mru'
 Plug 'tpope/vim-fugitive'
-Plug 'Konfekt/FastFold'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 
@@ -59,6 +58,7 @@ Plug 'fatih/vim-go'
 "-----------------------------------------------------------------------------
 "Finders
 "-----------------------------------------------------------------------------
+
 Plug 'scrooloose/nerdtree'
 Plug 'junegunn/fzf', { 'do': './install --all' }
 Plug 'majutsushi/tagbar'
@@ -66,6 +66,7 @@ Plug 'majutsushi/tagbar'
 "-----------------------------------------------------------------------------
 "Misc
 "-----------------------------------------------------------------------------
+
 Plug 'junegunn/goyo.vim'
 
 "End plugin list --------------------------------------------------------------
@@ -285,17 +286,6 @@ if executable("rg")
   let g:ackprg = 'rg --vimgrep --no-heading -i'
 endif
 
-"Fastfold
-let g:fastfold_savehook = 1
-let g:fastfold_fdmhook = 0
-let g:tex_fold_enabled = 1
-let g:vimsyn_folding = 'af'
-let g:javascript_fold = 1
-let g:python_fold = 1
-let g:go_fold = 1
-let g:html_fold = 1
-
-
 "End Plugin configuration -----------------------------------------------------
 
 "View & Highlighters-----------------------------------------------------------
@@ -332,7 +322,7 @@ endif
 set backspace=2
 
 "case insensitve search
-set ignorecase
+"set ignorecase
 
 "Prefer UTF-8.
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
@@ -383,6 +373,10 @@ set list
 set foldmethod=indent
 set foldlevel=99
 
+"Just search word, not jump.
+"http://stackoverflow.com/questions/4256697/vim-search-and-highlight-but-do-not-jump
+nnoremap * :keepjumps normal! mi*`i<CR>
+
 "Allows hiding buffers even though they contain modifications
 "Issue with neovim & vim-airline : https://github.com/neovim/neovim/issues/4524
 "http://www.guckes.net/vim/setup.html
@@ -401,15 +395,13 @@ syn sync minlines=50 maxlines=50
 
 "Key bindings -----------------------------------------------------------------
 
-"Move to beginning of the current line
-map <C-a> 0
-"Move to end of line
-map <C-e> $
+"Terminal in Vim
+":help terminal-emulator-input
+"Exit terminal mode
+:tnoremap <Esc> <C-\><C-n>
 
 "Quit file
 nmap <C-q> :q<CR>
-"Quit all file
-nmap qa :qa<CR>
 "Save file like GUI editor
 nmap <C-s> :w<CR>
 
@@ -462,10 +454,6 @@ nmap <S-Right> :wincmd l<CR>
 vmap <C-c> y<Esc>i
 vmap <C-x> d<Esc>i
 imap <C-v> <Esc>pi
-
-"split pane
-nmap \ :vsp<CR>
-nmap - :sp<CR>
 
 "-----------------------------------------------------------------------------
 "Tabular
