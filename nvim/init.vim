@@ -28,6 +28,7 @@ Plug 'yegappan/mru'
 Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
+Plug 'https://github.com/easymotion/vim-easymotion'
 
 "-----------------------------------------------------------------------------
 "Languages
