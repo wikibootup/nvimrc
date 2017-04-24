@@ -464,7 +464,7 @@ imap <C-v> <Esc>pi
 "-----------------------------------------------------------------------------
 "Tabular
 "jsdoc to align same column positions
-vmap <leader>{ :Tabularize/ {/l1<CR>:Tabularize/}\zs<CR>:Tabularize/-<CR>
+vmap <leader>{ :Tabularize/ {/l0<CR>:Tabularize/}\zs<CR>:Tabularize/-<CR>
 "-----------------------------------------------------------------------------
 
 "New terminal in the top of the active pane
