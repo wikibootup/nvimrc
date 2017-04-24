@@ -330,6 +330,9 @@ set smartcase
 "Case insensitive when cmdline tab autocompletion
 set infercase
 
+"Disable to showing the completion preview pane
+set completeopt-=preview
+
 "Prefer UTF-8.
 set encoding=utf-8 fileencodings=ucs-bom,utf-8,cp949,korea,iso-2022-kr
 
