@@ -477,7 +477,7 @@ nmap term :new<CR>:wincmd k<CR>:resize 5<CR>:terminal<CR>
 nmap side :vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
 
 "Initialize window with NERDTree, right side pane
-nmap <C-i> :NERDTree<CR>:wincmd l<CR>:vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
+nmap <leader>i :NERDTree<CR>:wincmd l<CR>:vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
 
 "End Key bindings -------------------------------------------------------------
 
