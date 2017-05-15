@@ -476,6 +476,9 @@ nmap term :new<CR>:wincmd k<CR>:resize 5<CR>:terminal<CR>
 "New vertical pane at the side of the window (Condition: "splitright" is set.)
 nmap side :vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
 
+"Initialize window with NERDTree, right side pane
+nmap <C-i> :NERDTree<CR>:wincmd l<CR>:vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
+
 "End Key bindings -------------------------------------------------------------
 
 "VimEnter configurations ------------------------------------------------------
@@ -484,23 +487,24 @@ nmap side :vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
 augroup MRUOpen
   autocmd!
   autocmd VimEnter * MRU
+  autocmd VimEnter * :wincmd k
 augroup END
 
-augroup NERDTreeOpen
-  autocmd!
-  "NERDTree
-  autocmd VimEnter * NERDTree
-  "To focus edit pane after NERDTree open
-  autocmd VimEnter * wincmd l
-augroup END
+" augroup NERDTreeOpen
+"   autocmd!
+"   "NERDTree
+"   autocmd VimEnter * NERDTree
+"   "To focus edit pane after NERDTree open
+"   autocmd VimEnter * wincmd l
+" augroup END
 
-"Make a new 'Vertical New Pane Side' & back to the main pane
-augroup SideRightOpen
-  au!
-  autocmd VimEnter * :vnew
-  autocmd VimEnter * :vertical resize 40
-  autocmd VimEnter * :wincmd h
-augroup END
+" "Make a new 'Vertical New Pane Side' & back to the main pane
+" augroup SideRightOpen
+"   au!
+"   autocmd VimEnter * :vnew
+"   autocmd VimEnter * :vertical resize 40
+"   autocmd VimEnter * :wincmd h
+" augroup END
 
 "END VimEnter configuration ---------------------------------------------------
 
