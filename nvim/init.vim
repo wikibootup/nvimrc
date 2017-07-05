@@ -29,6 +29,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'https://github.com/easymotion/vim-easymotion'
+Plug 'sbdchd/neoformat'
 
 "-----------------------------------------------------------------------------
 "Languages
@@ -287,6 +288,21 @@ if executable("rg")
   let g:ackprg = 'rg --vimgrep --no-heading -i'
 endif
 
+" Neoformat
+" javascript/prettier
+" if you do not want to format partially, just add '// prettier-ignore' at the
+" statements to ignore.
+let g:neoformat_javascript_prettier = {
+            \ 'exe': 'prettier',
+            \ 'args': ['--single-quote', '--print-width 119'],
+            \ }
+let g:neoformat_enabled_javascript = ['prettier']
+" python/autopep8
+let g:neoformat_python_autopep8 = {
+            \ 'exe': 'autopep8',
+            \ }
+let g:neoformat_enabled_python = ['autopep8']
+
 "End Plugin configuration -----------------------------------------------------
 
 "View & Highlighters-----------------------------------------------------------
@@ -483,8 +499,12 @@ nmap <leader>i :NERDTree<CR>:wincmd l<CR>:vnew<CR>:vertical resize 40<CR>:wincmd
 
 "Buf configurations ----------------------------------------------------------
 
-"Automatically removing all trailing whitespace
-autocmd BufWritePre * %s/\s\+$//e
+
+augroup RemoveTrailingSpace
+  autocmd!
+  "Automatically removing all trailing whitespace
+  autocmd BufWritePre * %s/\s\+$//e
+augroup END
 
 "END Buf configuration -------------------------------------------------------
 
