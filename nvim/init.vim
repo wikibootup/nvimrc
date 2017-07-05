@@ -481,6 +481,13 @@ nmap <leader>i :NERDTree<CR>:wincmd l<CR>:vnew<CR>:vertical resize 40<CR>:wincmd
 
 "End Key bindings -------------------------------------------------------------
 
+"Buf configurations ----------------------------------------------------------
+
+"Automatically removing all trailing whitespace
+autocmd BufWritePre * %s/\s\+$//e
+
+"END Buf configuration -------------------------------------------------------
+
 "VimEnter configurations ------------------------------------------------------
 "NOTE: Order is important in this block.
 
