@@ -438,6 +438,10 @@ nmap <C-q> :q<CR>
 "Save file like GUI editor
 nmap <C-s> :w<CR>
 
+"Indent key for easy to press
+nmap < :<<<CR>
+nmap > :>><CR>
+
 "Nerdtree
 let NERDTreeMapOpenVSplit="<C-v>"
 let NERDTreeMapOpenSplit="<C-s>"
