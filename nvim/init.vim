@@ -55,6 +55,9 @@ Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'heavenshell/vim-jsdoc'
 
+""React
+Plug 'mxw/vim-jsx'
+
 Plug 'fatih/vim-go'
 
 "-----------------------------------------------------------------------------
@@ -84,6 +87,11 @@ augroup VimCSS3Syntax
 
   autocmd FileType css setlocal iskeyword+=-
 augroup END
+
+"-----------------------------------------------------------------------------
+" mxw/vim-jsx
+
+let g:jsx_ext_required = 0
 
 "-----------------------------------------------------------------------------
 "VIM-jsdoc
