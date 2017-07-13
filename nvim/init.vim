@@ -473,7 +473,7 @@ nmap <s-Tab> zc
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 " search from current directory
-map <A-F> :Ack \
+map <A-f> :Ack \
 " search from current file
 map <C-f> :LAckWindow! -H \
 
