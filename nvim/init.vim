@@ -477,7 +477,9 @@ nmap <s-Tab> zc
 "https://github.com/mileszs/ack.vim#i-dont-want-to-jump-to-the-first-result-automatically
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
-map <S-f> :Ack \
+" search from current directory
+map <A-F> :Ack \
+" search from current file
 map <C-f> :LAckWindow! -H \
 
 "http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
