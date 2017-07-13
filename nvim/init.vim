@@ -460,11 +460,6 @@ let g:fzf_action = {
 "  autocmd FileType javascript nnoremap <silent> <buffer> td :TernDef<CR>
 "augroup END
 
-"Remove all trailing whitespace
-nmap CTRAIL :let _s=@/<Bar>:%s/\s\+$//e<Bar>:let @/=_s<Bar><CR>
-"Remove all tab space
-nmap CTAB :%s/\t/  /g<CR>
-
 "Folding
 "fold (ex: level=<input><CR>)
 nmap fd :setlocal foldlevel=
