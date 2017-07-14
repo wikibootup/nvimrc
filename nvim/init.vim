@@ -439,8 +439,8 @@ nmap <C-q> :q<CR>
 nmap <C-s> :w<CR>
 
 "Indent key for easy to press
-nmap < :<<<CR>
-nmap > :>><CR>
+nmap < <<
+nmap > >>
 
 "Nerdtree
 let NERDTreeMapOpenVSplit="<C-v>"
