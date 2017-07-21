@@ -14,7 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
 "-----------------------------------------------------------------------------
 Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
-Plug 'goatslacker/mango.vim'
+Plug 'crusoexia/vim-monokai'
 
 "-----------------------------------------------------------------------------
 "Edit
@@ -318,8 +318,8 @@ let g:neoformat_enabled_python = ['autopep8']
 
 set background=dark
 
-" color mango
-colorscheme mango
+" color monokai
+colorscheme monokai
 
 " colorscheme solarized
 " Set term color palette to 256, and auto
