@@ -14,6 +14,7 @@ call plug#begin('~/.config/nvim/plugged')
 "-----------------------------------------------------------------------------
 Plug 'itchyny/lightline.vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'goatslacker/mango.vim'
 
 "-----------------------------------------------------------------------------
 "Edit
@@ -316,11 +317,15 @@ let g:neoformat_enabled_python = ['autopep8']
 "View & Highlighters-----------------------------------------------------------
 
 set background=dark
-colorscheme solarized
-"Set term color palette to 256, and auto
-let g:solarized_termcolors = 256
-"Set the default color with the best option for ITERM2 expliciltly.
-let g:solarized_termtrans = 1
+
+" color mango
+colorscheme mango
+
+" colorscheme solarized
+" Set term color palette to 256, and auto
+" let g:solarized_termcolors = 256
+" Set the default color with the best option for ITERM2 expliciltly.
+" let g:solarized_termtrans = 1
 
 "End View & Highlighters  -----------------------------------------------------
 
