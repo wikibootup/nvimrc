@@ -31,6 +31,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'sbdchd/neoformat'
+Plug 'airblade/vim-gitgutter'
 
 "-----------------------------------------------------------------------------
 "Languages
