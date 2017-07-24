@@ -518,7 +518,6 @@ nmap <leader>i :NERDTree<CR>:wincmd l<CR>:vnew<CR>:vertical resize 40<CR>:wincmd
 
 "Buf configurations ----------------------------------------------------------
 
-
 augroup RemoveTrailingSpace
   autocmd!
   "Automatically removing all trailing whitespace
@@ -536,21 +535,20 @@ augroup MRUOpen
   autocmd VimEnter * :wincmd k
 augroup END
 
-" augroup NERDTreeOpen
-"   autocmd!
-"   "NERDTree
-"   autocmd VimEnter * NERDTree
-"   "To focus edit pane after NERDTree open
-"   autocmd VimEnter * wincmd l
-" augroup END
+ augroup NERDTreeOpen
+   autocmd!
+   "NERDTree
+   autocmd VimEnter * NERDTree
+   "To focus edit pane after NERDTree open
+   autocmd VimEnter * wincmd l
+ augroup END
 
-" "Make a new 'Vertical New Pane Side' & back to the main pane
-" augroup SideRightOpen
-"   au!
-"   autocmd VimEnter * :vnew
-"   autocmd VimEnter * :vertical resize 40
-"   autocmd VimEnter * :wincmd h
-" augroup END
+ "Make a new 'Vertical New Pane Side' & back to the main pane
+ augroup SideRightOpen
+   au!
+   autocmd VimEnter * :vsp
+   autocmd VimEnter * wincmd h
+ augroup END
 
 "END VimEnter configuration ---------------------------------------------------
 
