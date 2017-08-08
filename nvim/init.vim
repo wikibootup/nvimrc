@@ -41,13 +41,14 @@ Plug 'airblade/vim-gitgutter'
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
 Plug 'Valloric/MatchTagAlways'
+""JADE
+Plug 'digitaltoad/vim-pug'
+""Mustache handlebars
+Plug 'mustache/vim-mustache-handlebars'
 
 "CSS
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
-
-"JADE
-Plug 'digitaltoad/vim-pug'
 
 "JAVASCRIPT
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
