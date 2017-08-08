@@ -46,6 +46,9 @@ Plug 'Valloric/MatchTagAlways'
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 
+"JADE
+Plug 'digitaltoad/vim-pug'
+
 "JAVASCRIPT
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
 Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
