@@ -106,7 +106,9 @@ let g:jsx_ext_required = 0
 
 "-----------------------------------------------------------------------------
 "VIM-jsdoc
-let g:jsdoc_access_descriptions = 2
+
+" Auto-insert @public, @private
+"let g:jsdoc_access_descriptions = 2
 
 "Input configuration
 let g:jsdoc_input_description = 1
