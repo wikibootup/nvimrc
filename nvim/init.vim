@@ -32,6 +32,7 @@ Plug 'tpope/vim-commentary'
 Plug 'https://github.com/easymotion/vim-easymotion'
 Plug 'sbdchd/neoformat'
 Plug 'airblade/vim-gitgutter'
+Plug 'tpope/vim-fugitive'
 
 "-----------------------------------------------------------------------------
 "Languages
