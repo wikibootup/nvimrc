@@ -491,9 +491,10 @@ nmap <s-Tab> zc
 cnoreabbrev Ack Ack!
 nnoremap <Leader>a :Ack!<Space>
 " search from current directory
-map <A-f> :Ack \
+map <S-f> :Ack \
 " search from current file
-map <C-f> :LAckWindow! -H \
+" @todo - remap key
+" map <C-f> :LAckWindow! -H \
 
 "http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
 nmap <S-Up> :wincmd k<CR>
