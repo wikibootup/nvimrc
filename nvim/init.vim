@@ -235,8 +235,8 @@ let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin
 let g:deoplete#max_list = 30
 let g:deoplete#max_abbr_width = 50
 let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 10
-let g:deoplete#auto_refresh_delay = 100
+let g:deoplete#auto_complete_delay = 50
+let g:deoplete#auto_refresh_delay = 500
 
 inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
