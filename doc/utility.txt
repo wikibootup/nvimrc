@@ -21,3 +21,8 @@ VIM jsdoc
 Tagbar
 - TagbarOpen may cause a delay for the large file, Toggle off(or turn off) if
   you mind that.
+
+Autocompletion
+I use following plugins together for various languages and frameworks.
+  - Deoplete
+  - nvim-completion-manager
