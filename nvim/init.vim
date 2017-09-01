@@ -543,6 +543,19 @@ nmap side :vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
 "Initialize window with NERDTree, right side pane
 nmap <leader>i :NERDTree<CR>:wincmd l<CR>:vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
 
+" Popup menu, autocomplete
+"enter as selection, not new line
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+" s-Tab as Up
+inoremap <expr> <s-Tab> pumvisible() ? "\<C-p>" : "\<s-Tab>"
+"up -> close popup and up
+inoremap <expr> <Up> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
+"down -> close popup and down
+inoremap <expr> <Down> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
+"Page up & down as Up & Down
+inoremap <expr> <PageDown> pumvisible() ? "\<C-n>" : "\<PageDown>"
+inoremap <expr> <PageUp>   pumvisible() ? "\<C-p>" : "\<PageUp>"
+
 "End Key bindings -------------------------------------------------------------
 
 "Buf configurations ----------------------------------------------------------
