@@ -471,11 +471,6 @@ syn sync minlines=50 maxlines=50
 "Exit terminal mode
 :tnoremap <Esc> <C-\><C-n>
 
-"Quit file
-nmap <C-q> :q<CR>
-"Save file like GUI editor
-nmap <C-s> :w<CR>
-
 "Indent key for easy to press
 nmap < <<
 nmap > >>
