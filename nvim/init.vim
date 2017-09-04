@@ -21,6 +21,10 @@ Plug 'crusoexia/vim-monokai'
 "-----------------------------------------------------------------------------
 Plug 'godlygeek/tabular'
 Plug 'jiangmiao/auto-pairs'
+Plug 'roxma/nvim-completion-manager'
+Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
+Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
+
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
 Plug 'neomake/neomake'
@@ -327,6 +331,22 @@ let g:neoformat_python_autopep8 = {
             \ 'exe': 'autopep8',
             \ }
 let g:neoformat_enabled_python = ['autopep8']
+
+" nvim-completion-manager
+let g:early_cache = 1
+" default : 50
+" even though I made the popup delay slow, mixing key error was not fixed. :(
+let g:cm_complete_popup_delay = 50
+
+" manage your pip modules for neovim
+" for python completions
+let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'jedi')
+" language specific completions on markdown file
+let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'mistune')
+
+" utils, optional
+let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'psutil')
+let g:python_support_python3_requirements = add(get(g:,'python_support_python3_requirements',[]),'setproctitle')
 
 "End Plugin configuration -----------------------------------------------------
 
