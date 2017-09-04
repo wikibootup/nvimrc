@@ -334,8 +334,8 @@ let g:neoformat_enabled_python = ['autopep8']
 
 " nvim-completion-manager
 let g:early_cache = 1
-" default : 50 <-- too fast, many cache makes command(eg. diw, daw) not working in temporary.
-let g:cm_complete_popup_delay = 500
+" default : 50
+"let g:cm_complete_popup_delay = 50
 
 " manage your pip modules for neovim
 " for python completions
