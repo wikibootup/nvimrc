@@ -335,9 +335,8 @@ let g:neoformat_enabled_python = ['autopep8']
 " nvim-completion-manager
 let g:early_cache = 1
 " default : 50
-" Too fast popup makes noisy & mixing key (eg. diw, daw, etc), but 500 is a
-" slight slow.
-let g:cm_complete_popup_delay = 300
+" even though I made the popup delay slow, mixing key error was not fixed. :(
+let g:cm_complete_popup_delay = 50
 
 " manage your pip modules for neovim
 " for python completions
