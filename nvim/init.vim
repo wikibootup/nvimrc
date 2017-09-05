@@ -62,7 +62,6 @@ Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
 Plug 'othree/javascript-libraries-syntax.vim'
-Plug 'othree/yajs.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'heavenshell/vim-jsdoc'
 

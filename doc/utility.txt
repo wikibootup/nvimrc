@@ -26,3 +26,10 @@ Autocompletion
 I use following plugins together for various languages and frameworks.
   - Deoplete
   - nvim-completion-manager
+
+Process speed(bottleneck) check
+(1) ':syntime on'
+(2) ': syntime report'
+
+Plugins I do not use 'for some reason'
+- 'othree/yajs.vim' : It makes javascript embedded in html very slow (2017, september 5).
