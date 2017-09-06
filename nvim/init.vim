@@ -545,14 +545,16 @@ nmap <leader>i :NERDTree<CR>:wincmd l<CR>:vnew<CR>:vertical resize 40<CR>:wincmd
 inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
 " s-Tab as Up
 inoremap <expr> <s-Tab> pumvisible() ? "\<C-p>" : "\<s-Tab>"
-"up -> close popup and up
-inoremap <expr> <Up> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
-"down -> close popup and down
-inoremap <expr> <Down> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
-"Page up & down as Up & Down
 inoremap <expr> <PageDown> pumvisible() ? "\<C-n>" : "\<PageDown>"
 inoremap <expr> <PageUp>   pumvisible() ? "\<C-p>" : "\<PageUp>"
+""" Commented because I need to keep default configuration
+"up -> close popup and up
+"inoremap <expr> <Up> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
+"down -> close popup and down
+"inoremap <expr> <Down> pumvisible() ? "\<C-e>\<Down>" : "\<Down>"
+"""
 
+"Page up & down as Up & Down
 "End Key bindings -------------------------------------------------------------
 
 "Buf configurations ----------------------------------------------------------
