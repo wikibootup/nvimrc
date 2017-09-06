@@ -532,7 +532,7 @@ vmap <leader>{ :Tabularize/ {/l0<CR>:Tabularize/}\zs<CR>:Tabularize/-<CR>
 "-----------------------------------------------------------------------------
 
 "New terminal in the top of the active pane
-nmap <leader>t :new<CR>:wincmd k<CR>:resize 5<CR>:terminal<CR>
+nmap <leader>t :new<CR>:resize 5<CR>:terminal<CR>
 
 "New vertical pane at the side of the window (Condition: "splitright" is set.)
 nmap side :vnew<CR>:vertical resize 40<CR>:wincmd h<CR>
