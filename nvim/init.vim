@@ -548,8 +548,6 @@ inoremap <expr> <Tab> pumvisible() ? "\<Down>" : "\<Tab>"
 inoremap <expr> <s-Tab> pumvisible() ? "\<Up>" : "\<s-Tab>"
 inoremap <expr> <PageDown> pumvisible() ? "\<Down>" : "\<PageDown>"
 inoremap <expr> <PageUp>   pumvisible() ? "\<Up>" : "\<PageUp>"
-inoremap <expr> j pumvisible() ? "\<Down>" : "\j"
-inoremap <expr> k pumvisible() ? "\<Up>" : "\k"
 """ Commented because I need to keep default configuration
 "up -> close popup and up
 "inoremap <expr> <Up> pumvisible() ? "\<C-e>\<Up>" : "\<Up>"
