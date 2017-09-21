@@ -33,3 +33,5 @@ Process speed(bottleneck) check
 
 Plugins I do not use 'for some reason'
 - 'othree/yajs.vim' : It makes javascript embedded in html very slow (2017, september 5).
+
+S-arrow mapping is deleted because other editors use it as blocking text.

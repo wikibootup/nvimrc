@@ -27,7 +27,8 @@ Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'zchee/deoplete-jedi'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
+Plug 'w0rp/ale'
 Plug 'mileszs/ack.vim'
 Plug 'yegappan/mru'
 Plug 'tpope/vim-fugitive'
@@ -287,17 +288,20 @@ let g:deoplete#omni#functions.javascript = [
 "neomake makes work process slow bacase it causes a delay whenever the current buffer is saved
 "use ':lopen' instead.
 "https://github.com/neomake/neomake#file-makers
-let g:neomake_open_list = 0
-let g:neomake_list_height = 5
-let g:neomake_javascript_jshint_maker = {
-    \ 'args': ['--verbose'],
-    \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
-    \ }
-let g:neomake_javascript_enabled_makers = ['jshint']
-augroup Neomake
-  autocmd!
-  autocmd BufWritePost * Neomake
-augroup END
+" let g:neomake_open_list = 0
+" let g:neomake_list_height = 0
+" let g:neomake_javascript_jshint_maker = {
+"     \ 'args': ['--verbose'],
+"     \ 'errorformat': '%A%f: line %l\, col %v\, %m \(%t%*\d\)',
+"     \ }
+" let g:neomake_javascript_enabled_makers = ['jshint']
+" augroup Neomake
+"   autocmd!
+"   autocmd BufWritePost * Neomake
+" augroup END
+
+"Unset html linter(tidy) because it makes too slow when save
+" let g:neomake_html_enabled_makers = []
 
 "othree/javascript-libraries-syntax.vim
 let libs = 'jquery,underscore,backbone,angularjs,d3,requirejs,angularui'
@@ -306,9 +310,6 @@ augroup JavascriptLibrariesSyntax
   autocmd!
   autocmd BufReadPre *.js let b:javascript_lib_use_angularjs = 1
 augroup END
-
-"Unset html linter(tidy) because it makes too slow when save
-let g:neomake_html_enabled_makers = []
 
 "RipGrep integration
 "http://www.wezm.net/technical/2016/09/ripgrep-with-vim/
@@ -512,18 +513,6 @@ map <S-f> :Ack \
 " search from current file
 " @todo - remap key
 " map <C-f> :LAckWindow! -H \
-
-"http://vim.wikia.com/wiki/Switch_between_Vim_window_splits_easily
-nmap <S-Up> :wincmd k<CR>
-nmap <S-Down> :wincmd j<CR>
-nmap <S-Left> :wincmd h<CR>
-nmap <S-Right> :wincmd l<CR>
-
-"http://vim.wikia.com/wiki/Quick_yank_and_paste
-"Ctrl + (c,x,v) as copy(yank)
-vmap <C-c> y<Esc>i
-vmap <C-x> d<Esc>i
-imap <C-v> <Esc>pi
 
 "-----------------------------------------------------------------------------
 "Tabular
