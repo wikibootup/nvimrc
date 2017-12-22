@@ -72,9 +72,9 @@ Plug 'mxw/vim-jsx'
 Plug 'fatih/vim-go'
 
 "PYTHON
-"" dependency : pylint
-Plug 'python-mode/python-mode'
-
+" Commented for now because Python-mode has a conflict with pylint in neovim.
+" Rather, deoplete-jedi have been used.
+" Plug 'python-mode/python-mode'
 
 "-----------------------------------------------------------------------------
 "Finders
