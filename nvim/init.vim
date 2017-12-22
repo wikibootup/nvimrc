@@ -96,6 +96,10 @@ call plug#end()
 
 "Plugin configuration ---------------------------------------------------------
 
+" ALE
+" Set this in your vimrc file to disabling highlighting
+let g:ale_set_highlights = 0
+
 "CSS3-syntax
 setlocal iskeyword+=-
 augroup VimCSS3Syntax
