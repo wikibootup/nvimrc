@@ -43,16 +43,19 @@ Plug 'tpope/vim-fugitive'
 "Languages
 "-----------------------------------------------------------------------------
 
-"HTML
+""HTML
 Plug 'othree/html5.vim'
 Plug 'mattn/emmet-vim'
-Plug 'Valloric/MatchTagAlways'
+
+"MatchTagAlways caused the error < Vim(for):E716: Key not present in Dictionary: stderr >
+" Plug 'Valloric/MatchTagAlways'
+
 ""JADE
 Plug 'digitaltoad/vim-pug'
 ""Mustache handlebars
 Plug 'mustache/vim-mustache-handlebars'
 
-"CSS
+""CSS
 Plug 'ap/vim-css-color'
 Plug 'hail2u/vim-css3-syntax'
 
@@ -219,9 +222,9 @@ let g:lightline = {
       \ }
 
 "MRU
-let MRU_Max_Entries = 30
-let MRU_Window_Height = 5
-let MRU_Auto_Close = 0
+" let MRU_Max_Entries = 30
+" let MRU_Window_Height = 5
+" let MRU_Auto_Close = 0
 
 "NerdTree
 let NERDTreeMapActivateNode = '<tab>'
@@ -564,11 +567,11 @@ augroup END
 "VimEnter configurations ------------------------------------------------------
 "NOTE: Order is important in this block.
 
-augroup MRUOpen
-  autocmd!
-  autocmd VimEnter * MRU
-  autocmd VimEnter * :wincmd k
-augroup END
+ augroup MRUOpen
+   autocmd!
+   autocmd VimEnter * MRU
+   autocmd VimEnter * :wincmd k
+ augroup END
 
  augroup NERDTreeOpen
    autocmd!
@@ -578,12 +581,12 @@ augroup END
    autocmd VimEnter * wincmd l
  augroup END
 
- "Make a new 'Vertical New Pane Side' & back to the main pane
- " augroup SideRightOpen
- "   au!
- "   autocmd VimEnter * :vsp
- "   autocmd VimEnter * wincmd h
- " augroup END
+"Make a new 'Vertical New Pane Side' & back to the main pane
+  augroup SideRightOpen
+    au!
+    autocmd VimEnter * :vsp
+    autocmd VimEnter * wincmd h
+  augroup END
 
 "END VimEnter configuration ---------------------------------------------------
 
@@ -593,9 +596,9 @@ augroup END
 "-----------------------------------------------------------------------------
 
 "MatchTagAlways
-let g:mta_set_default_matchtag_color = 0
-let g:mta_use_matchparen_group = 0
-highlight MatchTag ctermfg=white ctermbg=black
+" let g:mta_set_default_matchtag_color = 0
+" let g:mta_use_matchparen_group = 0
+" highlight MatchTag ctermfg=white ctermbg=black
 
 "-----------------------------------------------------------------------------
 "END Last configuration(including Plugins)
