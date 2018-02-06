@@ -582,11 +582,11 @@ augroup END
  augroup END
 
 "Make a new 'Vertical New Pane Side' & back to the main pane
-  augroup SideRightOpen
-    au!
-    autocmd VimEnter * :vsp
-    autocmd VimEnter * wincmd h
-  augroup END
+  " augroup SideRightOpen
+  "   au!
+  "   autocmd VimEnter * :vsp
+  "   autocmd VimEnter * wincmd h
+  " augroup END
 
 "END VimEnter configuration ---------------------------------------------------
 
