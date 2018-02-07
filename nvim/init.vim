@@ -222,9 +222,9 @@ let g:lightline = {
       \ }
 
 "MRU
-" let MRU_Max_Entries = 30
-" let MRU_Window_Height = 5
-" let MRU_Auto_Close = 0
+let MRU_Max_Entries = 30
+let MRU_Window_Height = 5
+let MRU_Auto_Close = 0
 
 "NerdTree
 let NERDTreeMapActivateNode = '<tab>'
