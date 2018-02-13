@@ -54,10 +54,10 @@
       - [link](http://www.wezm.net/technical/2016/09/ripgrep-with-vim/)
 
 - Font
-  - [Inconsolata for Powerline](https://github.com/powerline/fonts)
+  - [Font for Powerline](https://github.com/powerline/fonts)
   - Both Ascii & Non Ascii
-  - 14px(or bigger), Bold
-    - If 13px(or smaller) fonts makes editor slow (because many texts should be processed.)
+  - Meslo LG M Regular for Powerline
+  - 12pt
 
 Sources & References
 ---
