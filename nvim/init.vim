@@ -20,7 +20,7 @@ Plug 'crusoexia/vim-monokai'
 "Edit
 "-----------------------------------------------------------------------------
 Plug 'godlygeek/tabular'
-Plug 'jiangmiao/auto-pairs'
+" Plug 'jiangmiao/auto-pairs'
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
