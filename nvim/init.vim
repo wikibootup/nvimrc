@@ -565,6 +565,16 @@ augroup END
 
 "END Buf configuration -------------------------------------------------------
 
+"CursorLine configurations ----------------------------------------------------------
+
+augroup CursorLine
+  au!
+  au VimEnter,WinEnter,BufWinEnter * setlocal cursorline
+  au WinLeave * setlocal nocursorline
+augroup END
+
+"END cursorLine configuration -------------------------------------------------------
+
 "VimEnter configurations ------------------------------------------------------
 "NOTE: Order is important in this block.
 
