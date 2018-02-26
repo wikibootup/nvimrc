@@ -508,8 +508,8 @@ let g:fzf_action = {
 "fold (ex: level=<input><CR>)
 nmap fd :setlocal foldlevel=
 "Toggle
-nmap <Tab> zO
-nmap <s-Tab> zc
+" nmap <Tab> zO
+" nmap <s-Tab> zc
 
 "Ack.vim
 "type Ack, then it makes Ack!, because [I don't want to jump to the first result automatically.]
