@@ -225,7 +225,7 @@ let g:lightline = {
 "MRU
 let MRU_Max_Entries = 30
 let MRU_Window_Height = 5
-let MRU_Auto_Close = 0
+let MRU_Auto_Close = 1
 
 "NerdTree
 let NERDTreeMapActivateNode = '<tab>'
@@ -578,11 +578,11 @@ augroup END
 "VimEnter configurations ------------------------------------------------------
 "NOTE: Order is important in this block.
 
- augroup MRUOpen
-   autocmd!
-   autocmd VimEnter * MRU
-   autocmd VimEnter * :wincmd k
- augroup END
+ " augroup MRUOpen
+ "   autocmd!
+ "   autocmd VimEnter * MRU
+ "   autocmd VimEnter * :wincmd k
+ " augroup END
 
  augroup NERDTreeOpen
    autocmd!
