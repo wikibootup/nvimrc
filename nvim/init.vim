@@ -20,7 +20,7 @@ Plug 'crusoexia/vim-monokai'
 "Edit
 "-----------------------------------------------------------------------------
 Plug 'godlygeek/tabular'
-" Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs'
 Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
@@ -68,6 +68,7 @@ Plug 'jelera/vim-javascript-syntax'
 Plug 'othree/javascript-libraries-syntax.vim'
 Plug 'othree/es.next.syntax.vim'
 Plug 'heavenshell/vim-jsdoc'
+Plug 'leafgarland/typescript-vim'
 
 ""React
 Plug 'mxw/vim-jsx'
@@ -242,8 +243,14 @@ augroup TypescriptForVim
 augroup END
 
 "deoplete.vim
-let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
-let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
+
+" System Python Path
+" let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
+" let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
+" Pyenv Path
+let g:python_host_prog = '/Users/glen/.pyenv/shims/python2'
+let g:python3_host_prog = '/Users/glen/.pyenv/shims/python3'
+
 let g:deoplete#max_list = 30
 let g:deoplete#max_abbr_width = 50
 let g:deoplete#enable_at_startup = 1
