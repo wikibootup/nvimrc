@@ -25,8 +25,8 @@ Plug 'roxma/nvim-completion-manager'
 Plug 'roxma/nvim-cm-tern',  {'do': 'npm install'}
 Plug 'autozimu/LanguageClient-neovim', { 'do': ':UpdateRemotePlugins' }
 
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'zchee/deoplete-jedi'
+" Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+" Plug 'zchee/deoplete-jedi'
 " Plug 'neomake/neomake'
 Plug 'w0rp/ale'
 Plug 'mileszs/ack.vim'
@@ -61,7 +61,7 @@ Plug 'hail2u/vim-css3-syntax'
 
 "JAVASCRIPT
 Plug 'ternjs/tern_for_vim', { 'do': 'npm install' }
-Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+" Plug 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
 Plug 'moll/vim-node'
 Plug 'pangloss/vim-javascript'
 Plug 'jelera/vim-javascript-syntax'
@@ -248,16 +248,16 @@ augroup END
 " let g:python_host_prog = '/Library/Frameworks/Python.framework/Versions/2.7/bin/python'
 " let g:python3_host_prog = '/Library/Frameworks/Python.framework/Versions/3.5/bin/python3'
 " Pyenv Path
-let g:python_host_prog = '/Users/glen/.pyenv/shims/python2'
-let g:python3_host_prog = '/Users/glen/.pyenv/shims/python3'
+" let g:python_host_prog = '/Users/glen/.pyenv/shims/python2'
+" let g:python3_host_prog = '/Users/glen/.pyenv/shims/python3'
 
-let g:deoplete#max_list = 30
-let g:deoplete#max_abbr_width = 50
-let g:deoplete#enable_at_startup = 1
-let g:deoplete#auto_complete_delay = 50
-let g:deoplete#auto_refresh_delay = 500
+" let g:deoplete#max_list = 30
+" let g:deoplete#max_abbr_width = 50
+" let g:deoplete#enable_at_startup = 1
+" let g:deoplete#auto_complete_delay = 50
+" let g:deoplete#auto_refresh_delay = 500
 
-inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
+" inoremap <expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
 
 "omnifuncs for deoplete
 augroup omnifuncs
