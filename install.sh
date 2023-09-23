@@ -12,17 +12,27 @@ VIM_PLUG_URL=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir -p nvim/autoload
 curl -Lo nvim/autoload/plug.vim "$VIM_PLUG_URL"
 
-# Link neovim configuration to ~/dotfiles/nvim
-nvimrc_name="init.nvim"
-src_nvim_dir="$(pwd)/$(dirname "$0")/nvim"
-src_nvimrc="$src_nvim_dir/$nvimrc_name"
-dst_nvim_dir="$HOME/dotfiles/nvim"
-dst_nvimrc="$dst_nvim_dir/$nvimrc_name"
-echo "Neovim configuration directory: $dst_nvim_dir"
-if [[ ! -f "$dst_nvimrc" || "$(cat "$src_nvimrc")" != "$(cat "$dst_nvimrc")" ]]
+# Link neovim configuration to ~/.config/nvim (.config is default path for NeoVim)
+nvim_config_path="$HOME/.config"
+
+if [[ ! -d "$nvim_config_path" ]]
 then
-  rm -f "$dst_nvim_dir"
-  ln -sfi "$src_nvim_dir" "$dst_nvim_dir"
+  mkdir $nvim_config_path
+fi
+
+if [[ ! -d ".config/zshrc" ]]
+then
+  nvimrc_name="init.nvim"
+  src_nvim_dir="$(pwd)/$(dirname "$0")/nvim"
+  src_nvimrc="$src_nvim_dir/$nvimrc_name"
+  dst_nvim_dir="$nvim_config_path/nvim"
+  dst_nvimrc="$dst_nvim_dir/$nvimrc_name"
+  echo "Neovim configuration directory: $dst_nvim_dir"
+  if [[ ! -f "$dst_nvimrc" || "$(cat "$src_nvimrc")" != "$(cat "$dst_nvimrc")" ]]
+  then
+    rm -f "$dst_nvim_dir"
+    ln -sfi "$src_nvim_dir" "$dst_nvim_dir"
+  fi
 fi
 
 # Install plugins using vim-plug
