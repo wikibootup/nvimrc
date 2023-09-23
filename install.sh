@@ -12,11 +12,11 @@ VIM_PLUG_URL=https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 mkdir -p nvim/autoload
 curl -Lo nvim/autoload/plug.vim "$VIM_PLUG_URL"
 
-# Link neovim configuration to ~/.config/nvim
+# Link neovim configuration to ~/dotfiles/nvim
 nvimrc_name="init.nvim"
 src_nvim_dir="$(pwd)/$(dirname "$0")/nvim"
 src_nvimrc="$src_nvim_dir/$nvimrc_name"
-dst_nvim_dir="$HOME/.config/nvim"
+dst_nvim_dir="$HOME/dotfiles/nvim"
 dst_nvimrc="$dst_nvim_dir/$nvimrc_name"
 echo "Neovim configuration directory: $dst_nvim_dir"
 if [[ ! -f "$dst_nvimrc" || "$(cat "$src_nvimrc")" != "$(cat "$dst_nvimrc")" ]]
